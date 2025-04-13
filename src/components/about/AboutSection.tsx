@@ -11,7 +11,7 @@ const AboutSection = () => {
   });
 
   return (
-    <section id="about" className="section bg-white">
+    <section id="about" className="section bg-white p-8 md:p-16">
       <div className="container">
         <motion.div
           ref={ref}
@@ -23,7 +23,7 @@ const AboutSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-square rounded-lg overflow-hidden">
               <Image
-                src="/images/about-image.jpg"
+                src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg"
                 alt="About Me"
                 fill
                 className="object-cover"
@@ -33,7 +33,7 @@ const AboutSection = () => {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">About Me</h2>
               <div className="prose prose-lg text-gray-600">
                 <p className="mb-6">
-                  I'm a Senior Product Manager with a passion for creating innovative
+                  I&apos;m a Senior Product Manager with a passion for creating innovative
                   solutions that solve real-world problems. With years of experience in
                   product development and team leadership, I specialize in turning
                   complex ideas into successful products.

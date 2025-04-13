@@ -29,7 +29,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section bg-white">
+    <section id="contact" className="section bg-white p-8 md:p-16 text-black">
       <div className="container">
         <motion.div
           ref={ref}
@@ -53,7 +53,7 @@ const ContactSection = () => {
                 id="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 h-12"
                 required
               />
             </div>
@@ -70,7 +70,7 @@ const ContactSection = () => {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 h-12"
                 required
               />
             </div>

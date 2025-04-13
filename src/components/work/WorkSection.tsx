@@ -31,6 +31,14 @@ const projects: Project[] = [
     category: 'Case Study',
     year: '2023',
   },
+  {
+    title: 'Project 3',
+    description: 'A brief description of your second project and its impact.',
+    image: '/images/project2.jpg',
+    link: '/work/project2',
+    category: 'Case Study',
+    year: '2023',
+  },
   // Add more projects as needed
 ];
 
@@ -41,7 +49,7 @@ const WorkSection = () => {
   });
 
   return (
-    <section id="work" className="section bg-white">
+    <section id="work" className="section bg-white p-8 md:p-16">
       <div className="container">
         <motion.div
           ref={ref}

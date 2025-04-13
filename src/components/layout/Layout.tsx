@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
       <footer className="border-t border-gray-200 py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm text-gray-500">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Sunil Hanamshetty. All rights reserved.
           </p>
         </div>
       </footer>

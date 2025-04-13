@@ -1,13 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-white">
       <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50" />
-      
+
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +18,7 @@ const Hero = () => {
           className="mb-12"
         >
           <Image
-            src="/profile.jpg"
+            src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg"
             alt="Profile"
             width={120}
             height={120}
@@ -24,7 +26,7 @@ const Hero = () => {
             priority
           />
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
-            Your Name
+            Sunil Hanamshetty
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 max-w-2xl mx-auto font-medium">
             Sr. Product Manager Portfolio
@@ -37,12 +39,12 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a
+          <Link
             href="/work"
             className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200"
           >
             View My Work
-          </a>
+          </Link>
           <a
             href="/about"
             className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
@@ -71,4 +73,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
