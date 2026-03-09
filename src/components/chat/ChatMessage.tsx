@@ -1,3 +1,6 @@
+'use client'
+
+import ReactMarkdown from 'react-markdown'
 import { Message } from '@/types/chat'
 
 interface Props {
@@ -16,10 +19,23 @@ export default function ChatMessage({ message }: Props) {
             : 'bg-slate-50 text-slate-700 border border-slate-100 rounded-bl-md'
         }`}
       >
-        {message.content || (
-          <span className="text-slate-400 italic">
-            {message.role === 'assistant' ? '' : message.content}
-          </span>
+        {isUser ? (
+          message.content
+        ) : (
+          <div className="chat-markdown">
+            <ReactMarkdown
+              components={{
+                p: ({ children }) => <p className="my-1">{children}</p>,
+                ul: ({ children }) => <ul className="list-disc pl-5 my-1 space-y-0.5">{children}</ul>,
+                ol: ({ children }) => <ol className="list-decimal pl-5 my-1 space-y-0.5">{children}</ol>,
+                li: ({ children }) => <li className="my-0">{children}</li>,
+                strong: ({ children }) => <strong className="font-bold text-slate-900">{children}</strong>,
+                h3: ({ children }) => <h3 className="text-sm font-bold mt-2 mb-1">{children}</h3>,
+              }}
+            >
+              {message.content || ''}
+            </ReactMarkdown>
+          </div>
         )}
       </div>
     </div>
