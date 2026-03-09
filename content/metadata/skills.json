@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {
+      "name": "Product Strategy",
+      "skills": ["Product Roadmapping", "OKR Setting", "PRD Writing", "User Research", "Jobs-to-be-Done", "Feature Prioritization", "Go-to-Market", "Competitive Analysis"]
+    },
+    {
+      "name": "Analytics & Experimentation",
+      "skills": ["A/B Testing", "Cohort Analysis", "Funnel Optimization", "SQL", "Mixpanel", "Amplitude", "Statistical Significance", "Retention Analysis"]
+    },
+    {
+      "name": "Technical",
+      "skills": ["Figma", "Jira", "Notion", "Linear", "API Understanding", "Data Modeling Basics", "Python (basics)", "Agile/Scrum"]
+    }
+  ]
+}
