@@ -2,28 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight } from 'lucide-react'
-
-const caseStudies = [
-  {
-    title: 'From B2C to B2B: Data-Led Product Pivot',
-    description:
-      'How cohort analysis revealed a $3x LTV opportunity, leading to a product pivot that drove 180% ARR growth in 12 months.',
-    company: 'Triveni Digital',
-    outcome: '180% ARR Growth',
-    gradient: 'from-blue-500 to-indigo-600',
-    href: '#',
-  },
-  {
-    title: "Designing Yelow's Creator Growth Loop",
-    description:
-      'Designed a viral referral mechanism timed to the creator\'s first $100 milestone, driving 500+ organic acquisitions/month at $12 CAC vs $180 paid.',
-    company: 'Yelow',
-    outcome: '500+ Creators/Month',
-    gradient: 'from-indigo-500 to-violet-600',
-    href: '#',
-  },
-]
+import { Clock } from 'lucide-react'
 
 export default function CaseStudies() {
   const ref = useRef(null)
@@ -46,34 +25,25 @@ export default function CaseStudies() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {caseStudies.map((cs, i) => (
+          {[0, 1].map((i) => (
             <motion.div
-              key={cs.title}
+              key={i}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -4 }}
-              className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl overflow-hidden border border-slate-100"
             >
-              {/* Gradient thumbnail */}
-              <div className={`h-48 bg-gradient-to-br ${cs.gradient} flex items-center justify-center`}>
-                <div className="text-center text-white">
-                  <div className="text-3xl font-bold opacity-90">{cs.outcome}</div>
-                  <div className="text-sm opacity-70 mt-1">{cs.company}</div>
+              <div className="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                <div className="flex flex-col items-center gap-2 text-slate-400">
+                  <Clock className="w-8 h-8" />
+                  <span className="text-sm font-medium">Coming soon</span>
                 </div>
               </div>
-
               <div className="p-8">
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {cs.title}
-                </h3>
-                <p className="text-slate-500 leading-relaxed mb-6">{cs.description}</p>
-                <a
-                  href={cs.href}
-                  className="inline-flex items-center text-blue-600 font-semibold text-sm hover:gap-3 gap-2 transition-all"
-                >
-                  Read Case Study <ArrowRight className="w-4 h-4" />
-                </a>
+                <div className="h-4 bg-slate-100 rounded w-3/4 mb-3" />
+                <div className="h-3 bg-slate-100 rounded w-full mb-2" />
+                <div className="h-3 bg-slate-100 rounded w-5/6 mb-6" />
+                <p className="text-slate-400 text-sm">Case studies are being written — check back soon.</p>
               </div>
             </motion.div>
           ))}
