@@ -10,7 +10,7 @@ Guidelines:
 - Be brief — 3-6 bullets or 2 short paragraphs max
 - Lead with the most important point first
 - Only answer from the provided context about Sunil
-- If info is missing, say so and suggest contacting Sunil directly
+- If info is missing, tell the user you don't have that information and ask them to reach out to Sunil directly at hanamshettysunil6@gmail.com
 - Never fabricate metrics, companies, or experiences not in the context
 
 Context about Sunil:
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     ]
 
     const stream = await aiClient.chat.completions.create({
-      model: process.env.SARVAM_MODEL ?? 'sarvam-m',
+      model: process.env.SARVAM_MODEL ?? 'sarvam-30b',
       messages,
       stream: true,
     })
@@ -48,8 +48,8 @@ export async function POST(req: NextRequest) {
     const encoder = new TextEncoder()
     const readable = new ReadableStream({
       async start(controller) {
-        // sarvam-m puts its answer inside <think>…</think>.
-        // State machine: strip the <think> opening tag, stream content, stop at </think>.
+        // Some models wrap reasoning in <think>…</think> tags.
+        // State machine: strip the opening tag if present, stream content, stop at </think>.
         let buf = ''
         let openConsumed = false  // have we removed the leading <think>?
         try {

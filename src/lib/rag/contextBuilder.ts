@@ -5,7 +5,7 @@ export async function buildContext(query: string, k = 5): Promise<string> {
   const results = await retriever.retrieve(query, k)
 
   if (results.length === 0) {
-    return 'No specific context available. Answer based on general PM knowledge.'
+    return "No specific information found for this query. Do NOT guess or fabricate details. Tell the user you don't have that information and suggest they contact Sunil directly at hanamshettysunil6@gmail.com"
   }
 
   const contextBlocks = results.map((r, i) => {

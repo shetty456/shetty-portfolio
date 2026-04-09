@@ -37,7 +37,7 @@ export class TFIDFRetriever implements Retriever {
     this.loaded = true
   }
 
-  async retrieve(query: string, k = 5): Promise<RetrievalResult[]> {
+  async retrieve(query: string, k = 5, minScore = 0.05): Promise<RetrievalResult[]> {
     if (!this.loaded || this.embeddedChunks.length === 0) return []
 
     const svc = getEmbeddingService()
@@ -49,6 +49,7 @@ export class TFIDFRetriever implements Retriever {
     }))
 
     return scored
+      .filter(r => r.score >= minScore)
       .sort((a, b) => b.score - a.score)
       .slice(0, k)
   }
