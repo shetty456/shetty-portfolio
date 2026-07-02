@@ -32,8 +32,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">Skills</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-2">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
             Toolkit
           </h2>
         </motion.div>

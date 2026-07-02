@@ -66,8 +66,7 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">Experience</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-2">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
             Where I've built
           </h2>
         </motion.div>

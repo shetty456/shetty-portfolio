@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight, Download } from 'lucide-react'
 
 const stats = [
-  { value: '15%→28%', label: 'D1 Retention' },
   { value: '1M+', label: 'Users Shipped' },
-  { value: '90+', label: 'Weekly Active Educators' },
+  { value: '90+', label: 'A/B Tests Run' },
+  { value: '4+', label: 'Years Building Products' },
 ]
 
 export default function Hero() {

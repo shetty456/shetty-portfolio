@@ -9,6 +9,7 @@ Product Manager with 4+ years of experience driving B2C consumer products across
 
 ## Contact
 - Email: hanamshettysunil6@gmail.com
+- Phone: +91 9353129101
 - LinkedIn: linkedin.com/in/sunilhanamshetty
 
 ## Core Strengths

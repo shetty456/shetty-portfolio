@@ -49,8 +49,7 @@ export default function ProductImpact() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">Impact</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-2">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
             Results that matter
           </h2>
         </motion.div>
@@ -64,10 +63,9 @@ export default function ProductImpact() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="group bg-white border border-slate-100 rounded-2xl p-6 hover:shadow-lg hover:border-blue-100 transition-all duration-200 hover:border-l-4 hover:border-l-blue-500"
+                className="bg-white border border-slate-100 rounded-2xl p-6 transition-all duration-200"
               >
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-blue-600" />
                 </div>
                 <div className="text-2xl font-bold text-slate-900 mb-2">{item.metric}</div>

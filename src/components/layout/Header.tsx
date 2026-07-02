@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 
 const navLinks = [
+  { label: 'Case Studies', href: '#case-studies' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Impact', href: '#impact' },
   { label: 'Philosophy', href: '#philosophy' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Case Studies', href: '#case-studies' },
   { label: 'Skills', href: '#skills' },
 ]
 

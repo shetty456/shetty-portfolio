@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Mail, Linkedin } from 'lucide-react'
+import { Mail, Linkedin, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export default function Contact() {
@@ -19,8 +19,7 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <span className="text-blue-400 font-semibold text-sm tracking-wider uppercase">Contact</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Let's build something together.
           </h2>
           <p className="text-slate-400 text-xl leading-relaxed mb-12">
@@ -36,6 +35,15 @@ export default function Contact() {
             >
               <a href="mailto:hanamshettysunil6@gmail.com">
                 <Mail className="mr-2 h-5 w-5" /> Send Email
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-green-600 hover:bg-green-500 text-white rounded-full px-8"
+            >
+              <a href="tel:+919353129101">
+                <Phone className="mr-2 h-5 w-5" /> +91 93531 29101
               </a>
             </Button>
             <Button
