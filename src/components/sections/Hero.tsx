@@ -103,7 +103,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — 40% — abstract art */}
+          {/* Right — 40% — profile photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -111,31 +111,15 @@ export default function Hero() {
             className="hidden lg:flex lg:col-span-2 justify-center"
           >
             <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-              {/* Gradient blob */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-200 opacity-60" />
-              <div className="absolute top-8 left-8 right-8 bottom-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 opacity-20" />
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [-8, 8, -8] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute top-12 right-12 w-16 h-16 bg-blue-500 rounded-2xl opacity-80 rotate-12"
-              />
-              <motion.div
-                animate={{ y: [8, -8, 8] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute bottom-16 left-12 w-12 h-12 bg-indigo-400 rounded-xl opacity-60 -rotate-6"
-              />
-              <motion.div
-                animate={{ y: [-4, 4, -4] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-blue-600 rounded-3xl opacity-30"
-              />
-              {/* Center text */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-blue-700 opacity-80">SH</div>
-                  <div className="text-xs text-blue-500 mt-1 font-medium tracking-wider uppercase">PM</div>
-                </div>
+              {/* Soft glow backdrop */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100 via-blue-200 to-indigo-300 opacity-40 blur-xl" />
+              {/* Photo */}
+              <div className="absolute inset-0 rounded-full overflow-hidden ring-4 ring-white shadow-2xl">
+                <img
+                  src="/profile.jpg"
+                  alt="Sunil Hanamshetty"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
             </div>
           </motion.div>
