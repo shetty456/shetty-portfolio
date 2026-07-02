@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/update-embeddings.js && next build",
     "start": "next start",
     "lint": "eslint",
     "update-ai-context": "python3 scripts/gen_embeddings.py || node scripts/update-embeddings.js"

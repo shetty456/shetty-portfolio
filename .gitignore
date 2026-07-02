@@ -40,6 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# AI context
-data/embeddings.json
+# AI context — embeddings committed so production has them
 .env.local
