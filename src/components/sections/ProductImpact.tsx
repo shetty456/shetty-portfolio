@@ -8,7 +8,7 @@ const impacts = [
   {
     icon: TrendingUp,
     title: 'Retention Improvement',
-    description: 'Drove D30 retention from 15% to 28% through systematic experimentation and behavioral cohort analysis.',
+    description: 'Drove D1 retention from 15% to 28% in 6 weeks through a data-led pivot to a Teacher-Led model at Triveni.',
     metric: '15% → 28%',
     color: 'blue',
   },
@@ -21,16 +21,16 @@ const impacts = [
   },
   {
     icon: FlaskConical,
-    title: 'Experimentation',
-    description: 'Designed and ran 90+ A/B tests using rigorous statistical methods across retention, monetization, and growth.',
-    metric: '90+ Tests',
+    title: 'PLG Growth',
+    description: 'Designed and launched a PLG creator-share loop at Triveni, scaling to 90+ Weekly Active Educators with ~70% cohort retention.',
+    metric: '90+ WAEs',
     color: 'violet',
   },
   {
     icon: Zap,
-    title: 'Revenue Growth',
-    description: 'Led product pivot that resulted in 180% ARR growth in 12 months with 118% net revenue retention.',
-    metric: '180% ARR',
+    title: 'Founder',
+    description: 'Founded Triveni (EdTech) and Mignon (B2B SaaS) from 0 to 1, owning product discovery, GTM, and monetization end-to-end.',
+    metric: '2×',
     color: 'blue',
   },
 ]

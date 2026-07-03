@@ -20,7 +20,7 @@ export default function CaseStudies() {
           className="mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
-            Deep dives
+            Case Studies
           </h2>
         </motion.div>
 

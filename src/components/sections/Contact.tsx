@@ -24,7 +24,6 @@ export default function Contact() {
           </h2>
           <p className="text-slate-400 text-xl leading-relaxed mb-12">
             Open to PM roles, consulting engagements, and interesting conversations about products.
-            Reach out and let's talk.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

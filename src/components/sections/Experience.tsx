@@ -14,7 +14,8 @@ const experiences = [
       'Led strategic pivot from AI-first to Teacher-Led trust model, improving D1 retention from 15% to 28% in 6 weeks',
       'Analyzed user behavior via SQL and funnel data to deprecate low-impact AI Notes, refocusing roadmap on Quiz-First core loop',
       'Designed and launched PLG creator-share loop, scaling to 90+ Weekly Active Educators with ~70% cohort retention',
-      'Ran 3 monetization experiments (entry-fee tournaments, gated quizzes, tiered access) establishing ARPU benchmarks for subscription pricing',
+      'Ran 3 monetization experiments (entry-fee tournaments, gated quizzes, tiered access), validating willingness-to-pay across 2 tiers and establishing early ARPU benchmarks that informed subscription pricing',
+      'Defined north-star metrics (activation → retention → creator output) and aligned execution to unit economics',
     ],
   },
   {
@@ -26,6 +27,7 @@ const experiences = [
       'Built and shipped Flutter features for a consumer app that reached 1M+ downloads in less than 24 hours',
       'Designed and implemented a backend traffic management system preventing cascading failures during a 1M+ user launch',
       'Partnered with Product and Design to deliver high-fidelity UX, balancing speed, usability, and reliability under scale',
+      'Acted as bridge between product intent and engineering execution during high-risk launches',
     ],
   },
   {
@@ -37,6 +39,7 @@ const experiences = [
       'Built admin-triggered fallback flows to recover KYC applications during third-party API failures, improving funnel completion',
       'Shipped high-conversion landing page within a 7-day sprint, accelerating PMF experiments',
       'Led 10+ Banking and KYC integrations supporting a 500-user FinTech pilot across vendors and internal teams',
+      'Contributed to API strategy and system design, balancing compliance, reliability, and speed',
     ],
   },
   {
@@ -48,6 +51,7 @@ const experiences = [
       'Led strategic pivot from feature-driven to demand-first GTM — 20+ salon interviews to identify top-3 booking pain points',
       'Redesigned value proposition around salon owner ROI, resulting in higher-quality inbound leads and improved demo conversion',
       'Built push-notification and re-engagement experiments, testing PLG loops and repeat usage hypotheses',
+      'Owned end-to-end product discovery, experimentation, and early GTM execution',
     ],
   },
 ]
@@ -67,7 +71,7 @@ export default function Experience() {
           className="mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
-            Where I've built
+            Experience
           </h2>
         </motion.div>
 

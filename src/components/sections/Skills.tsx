@@ -33,7 +33,7 @@ export default function Skills() {
           className="mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
-            Toolkit
+            Skills
           </h2>
         </motion.div>
 

@@ -6,7 +6,7 @@ import { ArrowRight, Download } from 'lucide-react'
 
 const stats = [
   { value: '1M+', label: 'Users Shipped' },
-  { value: '90+', label: 'A/B Tests Run' },
+  { value: '2×', label: 'Founder' },
   { value: '4+', label: 'Years Building Products' },
 ]
 
@@ -53,7 +53,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base text-slate-500 leading-relaxed mb-6 max-w-xl"
             >
-              4+ years shipping EdTech, FinTech, and Health products at 1M+ user scale.
+              Product Manager with 4+ years shipping EdTech, FinTech, and Health products at 1M+ user scale.
             </motion.p>
 
             {/* CTAs */}

@@ -68,7 +68,7 @@ export default function PlumPersonalCaseStudy() {
           <h1 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight mb-2">
             Plum Personal — ARPU &amp; CLTV Growth Strategy
           </h1>
-          <p className="text-slate-400 text-sm mb-12">Product Strategy · Health-tech · B2B2C · V4</p>
+          <p className="text-slate-400 text-sm mb-12">Product Strategy · Health-tech · B2B2C</p>
 
           {/* ── Overview ─────────────────────────────── */}
           <Section title="Overview">
