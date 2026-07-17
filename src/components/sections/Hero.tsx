@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Download } from 'lucide-react'
 
@@ -115,10 +116,12 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100 via-blue-200 to-indigo-300 opacity-40 blur-xl" />
               {/* Photo */}
               <div className="absolute inset-0 rounded-full overflow-hidden ring-4 ring-white shadow-2xl">
-                <img
+                <Image
                   src="/profile.jpg"
                   alt="Sunil Hanamshetty"
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  priority
+                  className="object-cover object-center"
                 />
               </div>
             </div>

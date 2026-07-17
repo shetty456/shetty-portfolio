@@ -1,0 +1,33 @@
+# Sunil Hanamshetty — Product Manager
+
+> Experimentation-driven PM with 4+ years building B2C consumer products in EdTech, FinTech, and Health. 2× Founder. 1M+ users shipped.
+
+## About
+
+Sunil Hanamshetty is an experimentation-driven Product Manager based in India with 4+ years of experience building B2C consumer products across EdTech, FinTech, and Health verticals. He is a 2× Founder and has shipped products used by over 1 million users.
+
+His approach centres on using data and experimentation to make product decisions — not intuition alone. He focuses on activation, retention, and revenue metrics, and is comfortable working from 0-to-1 as well as scaling existing products.
+
+## Case Studies
+
+- **Nanonets Onboarding Redesign** — Redesigned the onboarding flow for Nanonets (a B2B workflow automation SaaS) to communicate "structured data at scale" rather than "ChatGPT for docs". Reduced time-to-first-value to under 5 minutes. Lifted activation by 12 points.
+  URL: https://sunil-pm-portfolio.netlify.app/case-studies/nanonets-onboarding
+
+- **Plum Personal — ARPU & CLTV Growth Strategy** — Strategy to shift Plum from a yearly claims event to a weekly health habit for 6L+ insured employees, growing ARPU and CLTV. Projected ~12.6% base revenue lift.
+  URL: https://sunil-pm-portfolio.netlify.app/case-studies/plum-personal
+
+- **Cult.fit Growth Machine — Conversion Funnel MVP** — Built the intelligence layer to move Cult.fit from metric-watching to action-taking. Core signal: members who hit 3 workouts/week for 4 weeks are 3× more likely to stay. Applied across 1.5L member dataset.
+  URL: https://sunil-pm-portfolio.netlify.app/case-studies/cult-growth-machine
+
+## Projects
+
+- **LabLens — AI Blood Report Interpreter** — Solo hackathon build (1 day). LLM pipeline that converts blood report images/PDFs into plain-language summaries with colour-coded verdicts (Urgent / Monitor / Normal). Scored 81/100. Key design decision: tightened classification thresholds to prevent false Urgents — recall traded for trust, deliberately.
+
+## Skills
+
+Product strategy, experimentation (A/B testing), activation & retention, growth analytics, user research, roadmapping, SQL, data analysis, B2C consumer products, B2B SaaS.
+
+## Contact
+
+Email: hanamshettysunil6@gmail.com
+Portfolio: https://sunil-pm-portfolio.netlify.app
