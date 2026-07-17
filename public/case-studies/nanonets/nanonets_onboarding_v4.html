@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nanonets · Onboarding</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #f0efed; }
+body { background: #f0efed; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 36px 48px 80px; color: #111; max-width: 1440px; margin: 0 auto; }
+
+/* PAGE HEADER */
+.ph { margin-bottom: 40px; }
+.ph h1 { font-size: 17px; font-weight: 700; color: #0a0f1e; margin-bottom: 5px; }
+.ph p { font-size: 12px; color: #777; max-width: 700px; line-height: 1.5; }
+
+/* STEP */yo
+.step { margin-bottom: 44px; }
+.step-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+.step-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+.s0 { background: rgba(17,24,39,.08); color: #374151; border: 1px solid rgba(17,24,39,.2); }
+.s1 { background: rgba(59,99,240,.1); color: #3b63f0; border: 1px solid rgba(59,99,240,.25); }
+.s2 { background: rgba(5,150,105,.1); color: #059669; border: 1px solid rgba(5,150,105,.25); }
+.s3 { background: rgba(124,58,237,.1); color: #7c3aed; border: 1px solid rgba(124,58,237,.25); }
+.s4 { background: rgba(220,88,12,.1); color: #c2410c; border: 1px solid rgba(220,88,12,.25); }
+.s5 { background: rgba(14,165,233,.1); color: #0369a1; border: 1px solid rgba(14,165,233,.25); }
+.s6 { background: rgba(219,39,119,.1); color: #be185d; border: 1px solid rgba(219,39,119,.25); }
+.step-title { font-size: 12.5px; font-weight: 700; color: #1a1a1a; }
+.step-note { font-size: 11px; color: #888; margin-bottom: 6px; line-height: 1.45; max-width: 700px; }
+
+/* GRIDS */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-1 { display: grid; grid-template-columns: 1fr; max-width: 620px; }
+
+/* SCREEN WRAPPER */
+.screen { background: #fff; border: 1px solid #d4d4d4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.09); }
+.screen-cap { background: #f7f7f6; border-top: 1px solid #e5e5e5; padding: 8px 12px; display: flex; align-items: baseline; gap: 8px; }
+.cap-t { font-size: 10.5px; font-weight: 700; color: #333; }
+.cap-n { font-size: 10px; color: #aaa; }
+
+/* BROWSER CHROME */
+.browser-bar { background: #ebebeb; border-bottom: 1px solid #d8d8d8; height: 26px; display: flex; align-items: center; padding: 0 10px; gap: 5px; flex-shrink: 0; }
+.bdot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.bd-r { background: #ff5f57; }
+.bd-y { background: #febc2e; }
+.bd-g { background: #28c840; }
+.burl { flex: 1; background: #fff; border: 1px solid #d0d0d0; border-radius: 4px; padding: 2px 8px; font-size: 9px; color: #666; margin: 0 10px; text-align: center; }
+
+/* ═══════════════════════════════
+   SIGNUP
+═══════════════════════════════ */
+.signup-wrap { display: flex; min-height: 400px; }
+.signup-left { flex: 1; padding: 30px 28px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid #f0f0f0; }
+.signup-logo { display: flex; align-items: center; gap: 7px; margin-bottom: 24px; }
+.signup-logo-ic { color: #3b63f0; font-size: 17px; }
+.signup-logo-name { font-size: 14px; font-weight: 700; color: #0a0f1e; }
+.signup-h { font-size: 17px; font-weight: 800; color: #0a0f1e; margin-bottom: 16px; }
+.goog-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: #111827; color: #fff; border: none; border-radius: 8px; padding: 10px 16px; width: 100%; font-size: 11.5px; font-weight: 600; cursor: pointer; margin-bottom: 12px; }
+.goog-icon { width: 14px; height: 14px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 900; color: #4285f4; flex-shrink: 0; font-style: italic; }
+.or-divider { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.or-line { flex: 1; height: 1px; background: #e5e7eb; }
+.or-text { font-size: 10px; color: #9ca3af; white-space: nowrap; }
+.form-label { font-size: 10.5px; font-weight: 600; color: #374151; margin-bottom: 4px; display: block; }
+.form-input { width: 100%; border: 1px solid #d1d5db; border-radius: 6px; padding: 8px 10px; font-size: 11px; color: #111; margin-bottom: 8px; outline: none; font-family: inherit; }
+.form-input::placeholder { color: #9ca3af; }
+.create-btn { width: 100%; background: #fff; color: #111827; border: 1.5px solid #d1d5db; border-radius: 8px; padding: 11px 16px; font-size: 12px; font-weight: 700; cursor: pointer; margin-top: 4px; }
+.signup-tos { font-size: 9px; color: #9ca3af; margin-bottom: 8px; line-height: 1.4; }
+.signup-tos a { color: #3b63f0; }
+.login-link { font-size: 10px; color: #6b7280; margin-top: 10px; }
+.login-link a { color: #3b63f0; }
+.signup-right { width: 42%; background: #f9fafb; padding: 24px 20px; display: flex; flex-direction: column; justify-content: center; }
+.trust-head { font-size: 10px; font-weight: 700; color: #374151; text-align: center; margin-bottom: 12px; }
+.logo-strip { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 14px; }
+.logo-tag { background: #fff; border: 1px solid #e5e7eb; border-radius: 5px; padding: 4px 8px; font-size: 8.5px; font-weight: 700; color: #374151; }
+.stats-row { display: flex; gap: 8px; margin-bottom: 12px; }
+.stat-box { flex: 1; text-align: center; background: #fff; border: 1px solid #e5e7eb; border-radius: 7px; padding: 8px 4px; }
+.stat-val { font-size: 17px; font-weight: 900; color: #3b63f0; }
+.stat-lbl { font-size: 8px; color: #6b7280; line-height: 1.3; margin-top: 1px; }
+.rating-row { display: flex; gap: 8px; }
+.rating-pill { flex: 1; background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 5px 7px; display: flex; align-items: center; gap: 4px; }
+.rating-t { font-size: 8.5px; font-weight: 700; color: #111; }
+.rating-s { font-size: 7.5px; color: #f59e0b; letter-spacing: -.3px; }
+
+/* ═══════════════════════════════
+   NANONETS AGENTS CHROME
+═══════════════════════════════ */
+.nn-wrap { display: flex; flex: 1; min-height: 0; }
+.nn-inner { display: flex; flex-direction: column; height: 385px; }
+
+/* Sidebar */
+.nn-sidebar { width: 46px; background: #fff; border-right: 1px solid #e8e8e8; display: flex; flex-direction: column; flex-shrink: 0; }
+.nn-sb-brand { display: flex; align-items: center; justify-content: center; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.nn-brand-ic { width: 26px; height: 26px; border-radius: 8px; background: #3b63f0; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #fff; flex-shrink: 0; }
+.nn-nav { padding: 6px 4px; flex: 1; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.nn-ni { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 8px; color: #9ca3af; cursor: pointer; }
+.nn-ni.on { background: #eff3ff; color: #3b63f0; }
+.nn-ni-ic { font-size: 18px; line-height: 1; display: block; }
+.nn-recent { display: none; }
+.nn-rl { display: none; }
+.nn-ri { display: none; }
+.nn-sb-foot { padding: 6px 0; border-top: 1px solid #f0f0f0; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.nn-sb-link { display: flex; align-items: center; justify-content: center; color: #c5c5c5; cursor: pointer; padding: 3px 0; }
+.nn-user-row { display: flex; align-items: center; justify-content: center; padding-top: 3px; }
+.nn-av { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg,#4f7df7,#7c3aed); display: flex; align-items: center; justify-content: center; font-size: 7.5px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.nn-ui { display: none; }
+
+/* Main area */
+.nn-main { flex: 1; background: #f9f9f9; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
+
+/* ═══════════════════════════════
+   LABELED STEPPER
+═══════════════════════════════ */
+.stepper { display: flex; align-items: flex-start; gap: 0; margin-bottom: 16px; }
+.step-dot-wrap { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.sd { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8.5px; font-weight: 700; flex-shrink: 0; }
+.done { background: #059669; color: #fff; }
+.active { background: #3b63f0; color: #fff; }
+.idle { background: #e5e7eb; color: #9ca3af; }
+.sd-lbl { font-size: 7px; color: #9ca3af; white-space: nowrap; }
+.sd-lbl.al { color: #3b63f0; font-weight: 700; }
+.sl { flex: 1; height: 2px; border-radius: 2px; background: #e5e7eb; margin-top: 9px; }
+.sl-d { background: #059669; }
+
+/* ═══════════════════════════════
+   HOME STATE (centered chat)
+═══════════════════════════════ */
+.nn-home { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; padding: 16px; }
+.nn-home-title { font-size: 14.5px; font-weight: 700; color: #0a0f1e; text-align: center; margin-bottom: 12px; }
+
+/* Search box */
+.nn-search-box { width: 100%; max-width: 400px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 8px 10px; display: flex; align-items: flex-start; gap: 7px; margin-bottom: 8px; }
+.nn-search-box.focus { border-color: #3b63f0; }
+.nn-plus { font-size: 15px; color: #bbb; cursor: pointer; margin-top: 1px; flex-shrink: 0; }
+.nn-query { flex: 1; font-size: 10.5px; color: #999; line-height: 1.4; min-height: 24px; }
+.nn-query.live { color: #111; }
+.nn-send { width: 26px; height: 26px; border-radius: 50%; background: #3b63f0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; flex-shrink: 0; }
+
+/* Drop zone */
+.nn-dropzone { width: 100%; max-width: 400px; border: 1.5px dashed #d5d5d5; border-radius: 8px; padding: 10px; text-align: center; background: #fff; }
+.nn-dz-ic { font-size: 18px; margin-bottom: 3px; }
+.nn-dz-t { font-size: 9.5px; color: #555; }
+.nn-dz-t a { color: #3b63f0; }
+.nn-dz-sub { font-size: 8px; color: #bbb; margin-top: 2px; }
+
+/* Example cards */
+.ex-label { font-size: 9.5px; color: #888; margin-bottom: 7px; width: 100%; max-width: 400px; }
+.ex-cards { display: flex; gap: 7px; width: 100%; max-width: 400px; }
+.ex-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 7px; padding: 8px; flex: 1; cursor: pointer; }
+.ex-thumb { border-radius: 5px; height: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; font-size: 10px; font-weight: 700; color: #555; }
+.ex-title { font-size: 9px; font-weight: 700; color: #111; margin-bottom: 2px; }
+.ex-sub { font-size: 8px; color: #888; line-height: 1.3; }
+
+/* ═══════════════════════════════
+   TASK SPLIT VIEW
+═══════════════════════════════ */
+.nn-task-split { display: flex; flex: 1; min-height: 0; }
+.nn-task-left { width: 50%; border-right: 1px solid #e8e8e8; display: flex; flex-direction: column; background: #fff; }
+.nn-task-bc { padding: 6px 10px; font-size: 8.5px; color: #bbb; border-bottom: 1px solid #f0f0f0; }
+.nn-task-bc span { color: #3b63f0; cursor: pointer; }
+.nn-msgs { flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 7px; overflow: hidden; }
+.nn-msg-u { background: #f3f4f6; border-radius: 6px; padding: 6px 9px; font-size: 9.5px; color: #333; align-self: flex-end; max-width: 92%; }
+.nn-msg-a { font-size: 9.5px; color: #444; line-height: 1.55; }
+.nn-step-line { display: flex; align-items: center; gap: 5px; font-size: 8.5px; color: #aaa; padding: 1px 0; }
+.nn-step-line::before { content: '›'; }
+.nn-task-footer { padding: 8px 10px; border-top: 1px solid #f0f0f0; }
+.nn-reply-box { background: #f5f5f5; border-radius: 7px; padding: 6px 10px; font-size: 9.5px; color: #bbb; display: flex; align-items: center; justify-content: space-between; }
+.nn-doc-panel { flex: 1; display: flex; flex-direction: column; background: #f5f5f4; }
+.nn-doc-topbar { background: #fff; border-bottom: 1px solid #e8e8e8; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; }
+.nn-doc-name { font-size: 10px; font-weight: 700; color: #333; }
+.nn-doc-acts { display: flex; gap: 8px; font-size: 11px; color: #bbb; }
+.nn-doc-body { flex: 1; padding: 10px; overflow: hidden; }
+
+/* ═══════════════════════════════
+   SHARED COMPONENTS
+═══════════════════════════════ */
+.c { background: #fff; border: 1px solid #e8e8e8; border-radius: 7px; padding: 10px; margin-bottom: 8px; }
+.c:last-child { margin-bottom: 0; }
+.ct { font-size: 11.5px; font-weight: 700; color: #111; margin-bottom: 2px; }
+.cs { font-size: 10px; color: #666; line-height: 1.4; }
+.dprev { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px; font-size: 9.5px; color: #555; line-height: 1.65; }
+.hl { background: rgba(59,99,240,.14); border-radius: 3px; padding: 0 2px; color: #3b63f0; font-weight: 600; }
+.dsplit { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.fields { display: flex; flex-direction: column; gap: 4px; }
+.frow { background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 6px 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fl { font-size: 8.5px; color: #999; flex-shrink: 0; white-space: nowrap; }
+.fv { font-size: 9.5px; font-weight: 700; color: #111; }
+.fc { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 10px; flex-shrink: 0; }
+.fhi { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.flo { background: #fef3c7; color: #b45309; border: 1px solid #fcd34d; }
+.tgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 7px; }
+.tc { border: 1.5px solid #e5e7eb; border-radius: 7px; padding: 9px; background: #fff; cursor: pointer; position: relative; }
+.tc.sel { border-color: #3b63f0; box-shadow: 0 0 0 2px rgba(59,99,240,.1); }
+.tt { border-radius: 5px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 15px; margin-bottom: 5px; }
+.tn { font-size: 10px; font-weight: 700; color: #111; margin-bottom: 1px; }
+.tco { font-size: 8.5px; color: #888; line-height: 1.3; }
+.tm { display: flex; align-items: center; gap: 4px; margin-top: 4px; }
+.ts { color: #f59e0b; font-size: 8px; letter-spacing: -.5px; }
+.tu { font-size: 8px; color: #bbb; }
+.tpop { position: absolute; top: 6px; right: 6px; font-size: 7.5px; font-weight: 700; background: #059669; color: #fff; padding: 1.5px 5px; border-radius: 8px; }
+/* Connector pills */
+.cpill { display: inline-flex; align-items: center; gap: 4px; font-size: 9px; font-weight: 600; color: #374151; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 4px 8px; border-radius: 20px; }
+.cpill-confirmed { }
+.cdot { width: 5px; height: 5px; border-radius: 50%; background: #9ca3af; flex-shrink: 0; }
+.cdot-ok { background: #22c55e; }
+.insight { background: linear-gradient(135deg,#ecfdf5,#d1fae5); border: 1px solid #6ee7b7; border-radius: 9px; padding: 11px 13px; display: flex; align-items: flex-start; gap: 9px; }
+.iic { font-size: 22px; flex-shrink: 0; }
+.ihl { font-size: 12px; font-weight: 900; color: #065f46; margin-bottom: 2px; }
+.isub { font-size: 9px; color: #047857; line-height: 1.45; }
+.istats { display: flex; gap: 12px; margin-top: 6px; }
+.iv { font-size: 14px; font-weight: 900; color: #059669; }
+.ilb { font-size: 8px; color: #6b7280; }
+.srow { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #f3f4f6; font-size: 9.5px; }
+.srow:last-child { border-bottom: none; }
+.sk { color: #777; }
+.svg { font-weight: 700; color: #059669; }
+.sv2 { font-weight: 700; color: #111; }
+.p2-wrap { background: repeating-linear-gradient(-45deg,#fafafa,#fafafa 4px,#f3f4f6 4px,#f3f4f6 8px); }
+.p2-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 9.5px; font-weight: 700; background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; padding: 3px 9px; border-radius: 20px; margin-bottom: 10px; }
+.ef { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 6px; padding: 5px 9px; display: flex; align-items: center; justify-content: space-between; gap: 7px; margin-bottom: 4px; }
+.ef.new { border-color: #059669; background: #f0fdf4; }
+.ek { font-size: 9px; color: #666; }
+.et { font-size: 9.5px; font-weight: 700; color: #111; }
+.erm { font-size: 9px; color: #ccc; cursor: pointer; }
+.success { text-align: center; padding: 11px 0 9px; background: #ecfdf5; border-radius: 7px; border: 1px solid #6ee7b7; margin-bottom: 9px; }
+.sem { font-size: 20px; margin-bottom: 3px; }
+.st { font-size: 11.5px; font-weight: 800; color: #065f46; }
+.ss { font-size: 9.5px; color: #047857; margin-top: 2px; }
+.bars { display: flex; align-items: flex-end; gap: 20px; height: 65px; padding: 0 6px; }
+.barw { display: flex; flex-direction: column; align-items: center; gap: 3px; flex: 1; }
+.bar { width: 100%; border-radius: 4px 4px 0 0; }
+.barm { background: #fee2e2; height: 54px; display: flex; align-items: flex-start; justify-content: center; padding-top: 4px; }
+.barn { background: #3b63f0; height: 5px; }
+.blm { font-size: 8.5px; font-weight: 700; color: #dc2626; }
+.bax { font-size: 8px; color: #777; }
+.b { font-size: 8.5px; font-weight: 700; padding: 2px 6px; border-radius: 20px; display: inline-flex; align-items: center; }
+.bb { background: #eff3ff; color: #3b63f0; border: 1px solid #c3d7fd; }
+.bg2 { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+
+/* PRIMARY / SECONDARY BUTTONS */
+.btn-p { background: #111827; color: #fff; border: none; padding: 11px 16px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; width: 100%; text-align: center; display: block; }
+.btn-s { background: #fff; color: #374151; border: 1px solid #d1d5db; padding: 7px 12px; border-radius: 6px; font-size: 10px; cursor: pointer; }
+/* Ghost — lowest visual weight */
+.btn-ghost { background: transparent; border: none; color: #6b7280; font-size: 10px; cursor: pointer; text-decoration: underline; }
+
+.fr { display: flex; align-items: center; gap: 7px; }
+.fb { display: flex; align-items: center; justify-content: space-between; }
+.mt6 { margin-top: 6px; }
+.mt8 { margin-top: 8px; }
+.mt10 { margin-top: 10px; }
+.mb6 { margin-bottom: 6px; }
+.mb8 { margin-bottom: 8px; }
+.mb10 { margin-bottom: 10px; }
+.tx { font-size: 10.5px; }
+.txx { font-size: 9.5px; }
+.tgr { color: #6b7280; }
+.tbl { color: #3b63f0; }
+.tgn { color: #059669; }
+.fw7 { font-weight: 700; }
+.ctr { text-align: center; }
+.lbl { font-size: 8.5px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 4px; }
+.div { height: 1px; background: linear-gradient(90deg,transparent,#ccc 20%,#ccc 80%,transparent); margin: 36px 0; }
+.step-note { display: none; }
+.cap-n { display: none; }
+</style>
+</head>
+<body>
+
+<div class="ph">
+  <h1>Nanonets · Onboarding Flow</h1>
+  <p style="font-size:12px;color:#9ca3af;margin-top:4px;">Signup → Role → Demo → Template → Value Insight → Customise · Finance Manager persona</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     STEP 0 · SIGNUP
+══════════════════════════════════════════ -->
+<div class="step" id="step-0">
+  <div class="step-meta"><span class="step-label s0">Step 0</span><span class="step-title">Sign-Up Page</span></div>
+  <p class="step-note">Entry point. The right-column social proof (Roche, Ryanair, Schneider, G2/Capterra ratings) pre-empts the "is this legit?" concern before the user fills the form — reducing drop-off at the first friction point.</p>
+
+  <div class="grid-1">
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">accounts.nanonets.com/signup</div>
+      </div>
+      <div class="signup-wrap">
+        <div class="signup-left">
+          <div class="signup-logo"><span class="signup-logo-ic">⚡</span><span class="signup-logo-name">nanonets</span></div>
+          <div class="signup-h">Create your Nanonets account</div>
+          <button class="goog-btn"><div class="goog-icon">G</div> Sign up with Google →</button>
+          <div class="or-divider"><div class="or-line"></div><span class="or-text">Or, register with your email</span><div class="or-line"></div></div>
+          <label class="form-label">Work email</label>
+          <input class="form-input" placeholder="(eg) shawn@company.com" />
+          <label class="form-label">Password</label>
+          <input class="form-input" type="password" placeholder="••••••••" />
+          <div style="font-size:9px;color:#9ca3af;margin-top:-4px;margin-bottom:8px;">At least 8 characters</div>
+          <div class="signup-tos">By signing up, you agree to Nanonets' <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></div>
+          <button class="create-btn">Create free account</button>
+          <div class="login-link">Already have an account? <a href="#">Log in</a></div>
+        </div>
+        <div class="signup-right">
+          <div class="trust-head">Trusted by 1,000+ businesses worldwide</div>
+          <div class="logo-strip">
+            <span class="logo-tag">Volkswagen</span>
+            <span class="logo-tag">Roche</span>
+            <span class="logo-tag">Ryanair</span>
+            <span class="logo-tag">Schneider Electric</span>
+            <span class="logo-tag">Mondelēz</span>
+            <span class="logo-tag">Juniper Networks</span>
+          </div>
+          <div class="stats-row">
+            <div class="stat-box"><div class="stat-val">95%</div><div class="stat-lbl">Straight-through Processing</div></div>
+            <div class="stat-box"><div class="stat-val">80%</div><div class="stat-lbl">Reduction in Overhead Costs</div></div>
+            <div class="stat-box"><div class="stat-val">+32</div><div class="stat-lbl">External Apps Supported</div></div>
+          </div>
+          <div class="rating-row">
+            <div class="rating-pill"><span class="rating-s">★★★★★</span><div><div class="rating-t">4.9 on Capterra</div></div></div>
+            <div class="rating-pill"><span class="rating-s">★★★★★</span><div><div class="rating-t">4.9 on G2 Crowd</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">Signup</span><span class="cap-n">accounts.nanonets.com/signup</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+
+<!-- ══════════════════════════════════════════
+     STEP 1 · ROLE-BASED ENTRY
+══════════════════════════════════════════ -->
+<div class="step" id="step-1">
+  <div class="step-meta"><span class="step-label s1">Step 1 · Phase 1</span><span class="step-title">Role-Based Entry</span></div>
+  <p class="step-note">One question, one tap. Role selection personalises every downstream step — templates, demo content, and value framing. Finance &amp; Accounts pre-selected as the highest-volume segment with the clearest ROI story.</p>
+
+  <div class="grid-1">
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com/onboarding/role</div>
+      </div>
+      <!-- Clean full-page onboarding — no sidebar, no stepper -->
+      <div style="background:#fff;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 40px;">
+        <!-- Logo -->
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:28px;">
+          <div style="width:26px;height:26px;border-radius:7px;background:#3b63f0;display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;">⚡</div>
+          <span style="font-size:14px;font-weight:700;color:#0a0f1e;">nanonets</span>
+        </div>
+
+        <!-- Question -->
+        <div style="font-size:18px;font-weight:800;color:#0a0f1e;text-align:center;margin-bottom:8px;">What kind of documents do you work with?</div>
+        <div style="font-size:11px;color:#9ca3af;text-align:center;margin-bottom:24px;">We'll suggest the right workflow templates for your team.</div>
+
+        <!-- Role cards — 2×2, full width -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;margin-bottom:16px;">
+          <!-- Selected -->
+          <div style="border:2px solid #3b63f0;border-radius:10px;padding:14px;cursor:pointer;background:#fff;box-shadow:0 0 0 3px rgba(59,99,240,.08);">
+            <div style="font-size:20px;margin-bottom:8px;">💼</div>
+            <div style="font-size:11.5px;font-weight:700;color:#111;margin-bottom:3px;">Finance &amp; Accounts</div>
+            <div style="font-size:10px;color:#9ca3af;line-height:1.4;">AP/AR, invoices, reconciliation</div>
+          </div>
+          <div style="border:1.5px solid #e5e7eb;border-radius:10px;padding:14px;cursor:pointer;background:#fff;">
+            <div style="font-size:20px;margin-bottom:8px;">🏥</div>
+            <div style="font-size:11.5px;font-weight:700;color:#111;margin-bottom:3px;">Healthcare &amp; Insurance</div>
+            <div style="font-size:10px;color:#9ca3af;line-height:1.4;">Claims, EOBs, patient records</div>
+          </div>
+          <div style="border:1.5px solid #e5e7eb;border-radius:10px;padding:14px;cursor:pointer;background:#fff;">
+            <div style="font-size:20px;margin-bottom:8px;">📦</div>
+            <div style="font-size:11.5px;font-weight:700;color:#111;margin-bottom:3px;">Supply Chain &amp; Ops</div>
+            <div style="font-size:10px;color:#9ca3af;line-height:1.4;">POs, bills of lading, logistics</div>
+          </div>
+          <div style="border:1.5px solid #e5e7eb;border-radius:10px;padding:14px;cursor:pointer;background:#fff;">
+            <div style="font-size:20px;margin-bottom:8px;">⚙️</div>
+            <div style="font-size:11.5px;font-weight:700;color:#111;margin-bottom:3px;">Developer / Other</div>
+            <div style="font-size:10px;color:#9ca3af;line-height:1.4;">Custom workflows via API</div>
+          </div>
+        </div>
+
+        <!-- Single CTA -->
+        <button class="btn-p" style="width:100%;font-size:12px;">Show me Finance automation →</button>
+        <button class="btn-ghost" style="margin-top:8px;font-size:10px;">I'll explore on my own</button>
+      </div>
+      <div class="screen-cap"><span class="cap-t">Role Selection</span><span class="cap-n">Full-page, no app chrome. Finance pre-selected. CTA names the next step.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+
+<!-- ══════════════════════════════════════════
+     STEP 2 · PRE-LOADED DEMO
+══════════════════════════════════════════ -->
+<div class="step" id="step-2">
+  <div class="step-meta"><span class="step-label s2">Step 2 · Phase 1</span><span class="step-title">Pre-Loaded Demo with Sample Invoice</span></div>
+  <p class="step-note">Value before commitment. A pre-loaded AP invoice extracts in 4 seconds with 97–99% confidence scores — directly addressing the Finance Manager's core trust problem. No upload required, zero setup friction.</p>
+
+  <div class="grid-2">
+
+    <!-- 2a -->
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com</div>
+      </div>
+      <div class="nn-inner">
+        <div class="nn-wrap">
+          <div class="nn-sidebar">
+            <div class="nn-sb-brand"><div class="nn-brand-ic">⚡</div></div>
+            <div class="nn-nav">
+              <div class="nn-ni on"><span class="material-icons nn-ni-ic">add</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bolt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">task_alt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">hub</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">description</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bar_chart</span></div>
+            </div>
+            <div class="nn-sb-foot">
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">menu_book</span></div>
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">bug_report</span></div>
+              <div class="nn-user-row"><div class="nn-av">PS</div></div>
+            </div>
+          </div>
+          <div class="nn-main">
+            <div class="nn-home">
+              <div class="nn-home-title">Watch Nanonets extract your AP invoice</div>
+              <div style="font-size:9.5px;color:#9ca3af;text-align:center;margin-bottom:12px;max-width:380px;">We've loaded a real invoice — no upload needed. Takes 4 seconds.</div>
+              <div class="nn-search-box focus" style="margin-bottom:8px;">
+                <span class="nn-plus">+</span>
+                <div class="nn-query live">Extract all fields from this AP invoice →</div>
+              </div>
+              <div style="width:100%;max-width:400px;background:#f0f5ff;border:1.5px solid #c7d2fe;border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+                <span style="font-size:18px;">📄</span>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:10px;font-weight:700;color:#3b63f0;">invoice_sept_2024.pdf</div>
+                  <div style="font-size:8.5px;color:#6b7280;">Sample invoice · ABC Corporation</div>
+                </div>
+              </div>
+              <button class="btn-p" style="width:100%;max-width:400px;font-size:12px;">Extract now →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">2a — Demo ready</span><span class="cap-n">Sample invoice pre-loaded. One action.</span></div>
+    </div>
+
+    <!-- 2b -->
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com/tasks/demo-01</div>
+      </div>
+      <div class="nn-inner">
+        <div class="nn-wrap">
+          <div class="nn-sidebar">
+            <div class="nn-sb-brand"><div class="nn-brand-ic">⚡</div></div>
+            <div class="nn-nav">
+              <div class="nn-ni on"><span class="material-icons nn-ni-ic">add</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bolt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">task_alt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">hub</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">description</span></div>
+            </div>
+            <div class="nn-recent">
+              <div class="nn-rl">Recent tasks</div>
+              <div class="nn-ri" style="color:#3b63f0;font-weight:600;">Extract AP invoice fields...</div>
+            </div>
+            <div class="nn-sb-foot">
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">menu_book</span></div>
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">bug_report</span></div>
+              <div class="nn-user-row"><div class="nn-av">PS</div></div>
+            </div>
+          </div>
+          <div class="nn-main">
+            <div class="nn-task-split">
+              <div class="nn-task-left">
+                <div class="nn-task-bc"><span>Tasks</span> › Extract AP invoice fields</div>
+                <div class="nn-msgs">
+                  <div class="nn-msg-u">Extract all fields from this AP invoice →</div>
+                  <div class="nn-msg-a">
+                    <div class="nn-step-line">Reading invoice_sept_2024.pdf</div>
+                    <div class="nn-step-line">Extracting key data</div>
+                  </div>
+                  <div class="nn-msg-a" style="color:#059669;font-weight:700;">✅ Done — 6 fields extracted, 100% confidence</div>
+                  <div class="nn-msg-a" style="color:#555;">Vendor, invoice number, dates, amounts, and bank details captured. Results on the right.</div>
+                </div>
+                <div class="nn-task-footer">
+                  <div class="nn-reply-box" style="justify-content:flex-start;font-style:italic;">Ask follow-ups anytime — first, set up your workflow →</div>
+                </div>
+              </div>
+              <div class="nn-doc-panel">
+                <div class="nn-doc-topbar">
+                  <div class="nn-doc-name">invoice_sept_2024.pdf</div>
+                  <div class="nn-doc-acts">⬇ ↗ ✕</div>
+                </div>
+                <div class="nn-doc-body" style="display:flex;flex-direction:column;overflow-y:auto;">
+                  <div class="dprev" style="margin-bottom:8px;font-size:9px;display:flex;align-items:center;justify-content:space-between;">
+                    <div style="font-weight:800;color:#1a1a1a;">ABC CORPORATION</div>
+                    <div style="color:#9ca3af;">Invoice: <span class="hl">INV-2024-0891</span></div>
+                  </div>
+                  <div class="lbl mb6">Extracted Fields</div>
+                  <div class="fields" style="margin-bottom:8px;">
+                    <div class="frow"><span class="fl">Invoice No</span><span class="fv">INV-2024-0891</span><span class="fc fhi">98%</span></div>
+                    <div class="frow"><span class="fl">Date</span><span class="fv">15 Sep 2024</span><span class="fc fhi">99%</span></div>
+                    <div class="frow"><span class="fl">Vendor</span><span class="fv">ABC Corp</span><span class="fc fhi">97%</span></div>
+                    <div class="frow"><span class="fl">Total</span><span class="fv">₹4,24,800</span><span class="fc fhi">99%</span></div>
+                    <div class="frow"><span class="fl">Due Date</span><span class="fv">Oct 15, 2024</span><span class="fc fhi">96%</span></div>
+                    <div class="frow"><span class="fl">Bank</span><span class="fv">HDFC 4821</span><span class="fc flo">91%</span></div>
+                  </div>
+                </div>
+                <div style="padding:8px 10px;border-top:1px solid #e5e7eb;background:#fff;flex-shrink:0;">
+                  <button class="btn-p" style="font-size:10.5px;">Set up your AP workflow →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">2b — Extraction complete</span><span class="cap-n">6 fields extracted, 97–99% confidence. Trust built before any commitment.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="div"></div>
+
+
+<!-- ══════════════════════════════════════════
+     STEP 3 · TEMPLATE + SOCIAL PROOF
+══════════════════════════════════════════ -->
+<div class="step" id="step-3">
+  <div class="step-meta"><span class="step-label s3">Step 3 · Phase 1</span><span class="step-title">Template Marketplace with Social Proof</span></div>
+  <p class="step-note">Social proof at the point of commitment — named enterprise customers and ratings on every card. Screen 3c is the core aha: 14 structured fields vs 6 raw, with GSTIN, PO match, and GL code added by the template. This is Nanonets' real value over commodity OCR.</p>
+
+  <div class="grid-2">
+
+    <!-- 3a — Notion-style marketplace -->
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com/templates</div>
+      </div>
+      <div style="display:flex;flex-direction:column;height:460px;">
+        <div class="nn-wrap" style="flex:1;min-height:0;">
+          <div class="nn-sidebar">
+            <div class="nn-sb-brand"><div class="nn-brand-ic">⚡</div></div>
+            <div class="nn-nav">
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">add</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bolt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">task_alt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">hub</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">description</span></div>
+              <div class="nn-ni on"><span class="material-icons nn-ni-ic">account_tree</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bar_chart</span></div>
+            </div>
+            <div class="nn-sb-foot">
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">menu_book</span></div>
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">bug_report</span></div>
+              <div class="nn-user-row"><div class="nn-av">PS</div></div>
+            </div>
+          </div>
+          <div class="nn-main" style="background:#fff;display:flex;flex-direction:column;overflow:hidden;">
+
+            <!-- Marketplace header -->
+            <div style="padding:12px 16px 0;flex-shrink:0;">
+              <div style="font-size:13px;font-weight:800;color:#0a0f1e;margin-bottom:12px;">Template Gallery</div>
+              <!-- Search -->
+              <div style="display:flex;align-items:center;gap:8px;background:#f5f5f4;border:1px solid #e5e7eb;border-radius:8px;padding:6px 10px;margin-bottom:8px;">
+                <span class="material-icons" style="font-size:14px;color:#9ca3af;">search</span>
+                <span style="font-size:10px;color:#9ca3af;">Search 200+ templates…</span>
+              </div>
+              <!-- Category tabs -->
+              <div style="display:flex;gap:8px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
+                <div style="background:#0a0f1e;color:#fff;border-radius:20px;padding:3px 10px;font-size:8.5px;font-weight:700;white-space:nowrap;cursor:pointer;">Finance</div>
+                <div style="background:#f3f4f6;color:#6b7280;border-radius:20px;padding:3px 10px;font-size:8.5px;font-weight:600;white-space:nowrap;cursor:pointer;">Healthcare</div>
+                <div style="background:#f3f4f6;color:#6b7280;border-radius:20px;padding:3px 10px;font-size:8.5px;font-weight:600;white-space:nowrap;cursor:pointer;">Supply Chain</div>
+                <div style="background:#f3f4f6;color:#6b7280;border-radius:20px;padding:3px 10px;font-size:8.5px;font-weight:600;white-space:nowrap;cursor:pointer;">Legal</div>
+              </div>
+            </div>
+
+            <!-- Template grid -->
+            <div style="padding:12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;overflow-y:auto;flex:1;">
+
+              <!-- Card 1: AP Invoice (selected) -->
+              <div style="border:2px solid #3b63f0;border-radius:10px;overflow:hidden;cursor:pointer;box-shadow:0 0 0 3px rgba(59,99,240,.07);">
+                <div style="background:linear-gradient(150deg,#eef2ff,#dde6ff);padding:8px 12px 0;position:relative;height:80px;overflow:hidden;">
+                  <div style="position:absolute;top:8px;right:8px;background:#059669;color:#fff;font-size:6px;font-weight:800;padding:2px 5px;border-radius:8px;letter-spacing:.03em;">MOST USED</div>
+                  <table style="width:100%;border-collapse:collapse;font-size:7px;">
+                    <thead><tr style="border-bottom:1px solid rgba(99,102,241,.2);">
+                      <th style="text-align:left;padding:2px 3px;color:#6366f1;font-weight:700;">Vendor</th>
+                      <th style="text-align:left;padding:2px 3px;color:#6366f1;font-weight:700;">Amount</th>
+                      <th style="text-align:left;padding:2px 3px;color:#6366f1;font-weight:700;">Status</th>
+                    </tr></thead>
+                    <tbody>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#1e1b4b;">ABC Corp</td><td style="padding:2px 3px;color:#374151;">₹4,24,800</td><td style="padding:2px 3px;color:#059669;font-weight:700;">✓</td></tr>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#1e1b4b;">TCS Ltd</td><td style="padding:2px 3px;color:#374151;">₹1,12,000</td><td style="padding:2px 3px;color:#059669;font-weight:700;">✓</td></tr>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#1e1b4b;">Infosys</td><td style="padding:2px 3px;color:#374151;">₹87,500</td><td style="padding:2px 3px;color:#d97706;font-weight:700;">⏳</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="padding:12px;background:#fff;">
+                  <div style="font-size:10px;font-weight:700;color:#111;margin-bottom:4px;">AP Invoice Processing</div>
+                  <div style="font-size:7.5px;color:#9ca3af;margin-bottom:8px;">Roche · Reliance · Schneider</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;">
+                    <span style="font-size:8px;color:#f59e0b;letter-spacing:-.3px;">★★★★★ <span style="color:#9ca3af;">4.9</span></span>
+                    <span style="font-size:7.5px;color:#9ca3af;">843 teams</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Bank Statement Recon -->
+              <div style="border:1.5px solid #e5e7eb;border-radius:10px;overflow:hidden;cursor:pointer;">
+                <div style="background:linear-gradient(150deg,#ecfdf5,#d1fae5);padding:8px 12px 0;height:80px;overflow:hidden;">
+                  <table style="width:100%;border-collapse:collapse;font-size:7px;">
+                    <thead><tr style="border-bottom:1px solid rgba(5,150,105,.2);">
+                      <th style="text-align:left;padding:2px 3px;color:#059669;font-weight:700;">Date</th>
+                      <th style="text-align:left;padding:2px 3px;color:#059669;font-weight:700;">Description</th>
+                      <th style="text-align:right;padding:2px 3px;color:#059669;font-weight:700;">Amount</th>
+                    </tr></thead>
+                    <tbody>
+                      <tr><td style="padding:2px 3px;color:#374151;">01 Sep</td><td style="padding:2px 3px;font-weight:600;color:#111;">NEFT In</td><td style="padding:2px 3px;text-align:right;color:#059669;font-weight:700;">+50,000</td></tr>
+                      <tr><td style="padding:2px 3px;color:#374151;">05 Sep</td><td style="padding:2px 3px;font-weight:600;color:#111;">Vendor Pay</td><td style="padding:2px 3px;text-align:right;color:#dc2626;font-weight:700;">−12,000</td></tr>
+                      <tr><td style="padding:2px 3px;color:#374151;">12 Sep</td><td style="padding:2px 3px;font-weight:600;color:#111;">GST Out</td><td style="padding:2px 3px;text-align:right;color:#dc2626;font-weight:700;">−8,400</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="padding:12px;background:#fff;">
+                  <div style="font-size:10px;font-weight:700;color:#111;margin-bottom:4px;">Bank Statement Recon</div>
+                  <div style="font-size:7.5px;color:#9ca3af;margin-bottom:8px;">EY · Deloitte · KPMG</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;">
+                    <span style="font-size:8px;color:#f59e0b;letter-spacing:-.3px;">★★★★★ <span style="color:#9ca3af;">4.8</span></span>
+                    <span style="font-size:7.5px;color:#9ca3af;">521 teams</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: PO Matching -->
+              <div style="border:1.5px solid #e5e7eb;border-radius:10px;overflow:hidden;cursor:pointer;">
+                <div style="background:linear-gradient(150deg,#fff7ed,#fed7aa);padding:8px 12px 0;height:80px;overflow:hidden;">
+                  <table style="width:100%;border-collapse:collapse;font-size:7px;">
+                    <thead><tr style="border-bottom:1px solid rgba(220,88,12,.2);">
+                      <th style="text-align:left;padding:2px 3px;color:#c2410c;font-weight:700;">PO #</th>
+                      <th style="text-align:left;padding:2px 3px;color:#c2410c;font-weight:700;">Vendor</th>
+                      <th style="text-align:left;padding:2px 3px;color:#c2410c;font-weight:700;">Match</th>
+                    </tr></thead>
+                    <tbody>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#111;">PO-001</td><td style="padding:2px 3px;color:#374151;">ABC Corp</td><td style="padding:2px 3px;color:#059669;font-weight:700;">✓ Exact</td></tr>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#111;">PO-002</td><td style="padding:2px 3px;color:#374151;">TCS Ltd</td><td style="padding:2px 3px;color:#059669;font-weight:700;">✓ Exact</td></tr>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#111;">PO-003</td><td style="padding:2px 3px;color:#374151;">Wipro</td><td style="padding:2px 3px;color:#d97706;font-weight:700;">⚠ Review</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="padding:12px;background:#fff;">
+                  <div style="font-size:10px;font-weight:700;color:#111;margin-bottom:4px;">PO Matching</div>
+                  <div style="font-size:7.5px;color:#9ca3af;margin-bottom:8px;">Toyota · Suzano · Unilever</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;">
+                    <span style="font-size:8px;color:#f59e0b;letter-spacing:-.3px;">★★★★☆ <span style="color:#9ca3af;">4.7</span></span>
+                    <span style="font-size:7.5px;color:#9ca3af;">318 teams</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: Expense Report OCR -->
+              <div style="border:1.5px solid #e5e7eb;border-radius:10px;overflow:hidden;cursor:pointer;">
+                <div style="background:linear-gradient(150deg,#f5f3ff,#ede9fe);padding:8px 12px 0;height:80px;overflow:hidden;">
+                  <table style="width:100%;border-collapse:collapse;font-size:7px;">
+                    <thead><tr style="border-bottom:1px solid rgba(124,58,237,.2);">
+                      <th style="text-align:left;padding:2px 3px;color:#7c3aed;font-weight:700;">Employee</th>
+                      <th style="text-align:left;padding:2px 3px;color:#7c3aed;font-weight:700;">Category</th>
+                      <th style="text-align:right;padding:2px 3px;color:#7c3aed;font-weight:700;">Amt</th>
+                    </tr></thead>
+                    <tbody>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#111;">P. Sharma</td><td style="padding:2px 3px;color:#374151;">Travel</td><td style="padding:2px 3px;text-align:right;color:#374151;">₹8,500</td></tr>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#111;">R. Kumar</td><td style="padding:2px 3px;color:#374151;">Meals</td><td style="padding:2px 3px;text-align:right;color:#374151;">₹2,100</td></tr>
+                      <tr><td style="padding:2px 3px;font-weight:600;color:#111;">S. Patel</td><td style="padding:2px 3px;color:#374151;">Lodging</td><td style="padding:2px 3px;text-align:right;color:#374151;">₹14,200</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="padding:12px;background:#fff;">
+                  <div style="font-size:10px;font-weight:700;color:#111;margin-bottom:4px;">Expense Report OCR</div>
+                  <div style="font-size:7.5px;color:#9ca3af;margin-bottom:8px;">Mondelēz · Boston Scientific</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;">
+                    <span style="font-size:8px;color:#f59e0b;letter-spacing:-.3px;">★★★★☆ <span style="color:#9ca3af;">4.6</span></span>
+                    <span style="font-size:7.5px;color:#9ca3af;">240 teams</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div style="padding:12px 16px;border-top:1px solid #e5e7eb;background:#fff;flex-shrink:0;">
+              <button class="btn-p" style="font-size:11px;">Continue with AP Invoice Processing →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">3a — Template Gallery</span><span class="cap-n">Finance pre-filtered. Full-width CTA pins forward motion below the grid — no ambiguity.</span></div>
+    </div>
+
+    <!-- 3b — Template detail panel -->
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com/templates/ap-invoice</div>
+      </div>
+      <div style="display:flex;flex-direction:column;height:460px;">
+        <div class="nn-wrap" style="flex:1;min-height:0;">
+          <div class="nn-sidebar">
+            <div class="nn-sb-brand"><div class="nn-brand-ic">⚡</div></div>
+            <div class="nn-nav">
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">add</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bolt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">task_alt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">hub</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">description</span></div>
+              <div class="nn-ni on"><span class="material-icons nn-ni-ic">account_tree</span></div>
+            </div>
+            <div class="nn-sb-foot">
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">menu_book</span></div>
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">bug_report</span></div>
+              <div class="nn-user-row"><div class="nn-av">PS</div></div>
+            </div>
+          </div>
+          <div class="nn-main" style="background:#fff;display:flex;flex-direction:column;overflow:hidden;">
+
+            <!-- Header: name + CTA immediately visible — Krug: action first -->
+            <div style="padding:14px 16px;border-bottom:1px solid #f0f0f0;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+              <div>
+                <div style="font-size:13px;font-weight:800;color:#0a0f1e;margin-bottom:2px;">AP Invoice Processing</div>
+                <div style="font-size:8.5px;color:#f59e0b;">★★★★★ <span style="color:#9ca3af;">4.9 · 843 teams · Roche · Reliance · Schneider</span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;">
+                <button class="btn-p" style="width:auto;padding:8px 16px;font-size:10.5px;white-space:nowrap;">Apply to sample invoice →</button>
+                <div style="font-size:7.5px;color:#9ca3af;">We'll show you what this extracts from your demo</div>
+              </div>
+            </div>
+
+            <!-- Preview table — answers "what will I get?" -->
+            <div style="background:linear-gradient(150deg,#eef2ff,#dde6ff);padding:14px;flex-shrink:0;border-bottom:1px solid #e5e7eb;">
+              <div style="font-size:8px;font-weight:700;color:#6366f1;margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em;">Preview — extracted output</div>
+              <table style="width:100%;border-collapse:collapse;font-size:8px;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);">
+                <thead>
+                  <tr style="background:#f5f5f4;border-bottom:1px solid #e5e7eb;">
+                    <th style="text-align:left;padding:5px 8px;color:#6b7280;font-weight:700;">Vendor</th>
+                    <th style="text-align:left;padding:5px 8px;color:#6b7280;font-weight:700;">Invoice #</th>
+                    <th style="text-align:left;padding:5px 8px;color:#6b7280;font-weight:700;">Amount</th>
+                    <th style="text-align:left;padding:5px 8px;color:#6b7280;font-weight:700;">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid #f3f4f6;">
+                    <td style="padding:5px 8px;font-weight:600;color:#111;">ABC Corporation</td>
+                    <td style="padding:5px 8px;color:#374151;">INV-2024-0891</td>
+                    <td style="padding:5px 8px;font-weight:700;color:#111;">₹4,24,800</td>
+                    <td style="padding:5px 8px;"><span style="background:#ecfdf5;color:#059669;font-size:7px;font-weight:700;padding:1.5px 6px;border-radius:10px;">✓ Done</span></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid #f3f4f6;">
+                    <td style="padding:5px 8px;font-weight:600;color:#111;">TCS Limited</td>
+                    <td style="padding:5px 8px;color:#374151;">INV-2024-0892</td>
+                    <td style="padding:5px 8px;font-weight:700;color:#111;">₹1,12,000</td>
+                    <td style="padding:5px 8px;"><span style="background:#ecfdf5;color:#059669;font-size:7px;font-weight:700;padding:1.5px 6px;border-radius:10px;">✓ Done</span></td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 8px;font-weight:600;color:#111;">Infosys BPO</td>
+                    <td style="padding:5px 8px;color:#374151;">INV-2024-0893</td>
+                    <td style="padding:5px 8px;font-weight:700;color:#111;">₹87,500</td>
+                    <td style="padding:5px 8px;"><span style="background:#fffbeb;color:#d97706;font-size:7px;font-weight:700;padding:1.5px 6px;border-radius:10px;">In review</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Footer: connector info — secondary detail only -->
+            <div style="padding:12px 16px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;">
+                <div class="lbl" style="margin-bottom:0;">Pre-configured for</div>
+                <span style="font-size:8px;font-weight:700;color:#059669;">✓ No setup needed</span>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <div class="cpill-confirmed"><div class="cdot cdot-ok"></div>SAP</div>
+                <div class="cpill-confirmed"><div class="cdot cdot-ok"></div>Tally</div>
+                <div class="cpill-confirmed"><div class="cdot cdot-ok"></div>NetSuite</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">3b — Template Detail</span><span class="cap-n">843 teams · Roche · Reliance · Schneider. CTA sets up 3c. Connectors pre-configured, no action needed.</span></div>
+    </div>
+
+  </div>
+
+  <!-- 3c — The missing aha: template processes the demo invoice, showing STRUCTURED output -->
+  <div style="margin-top:16px;max-width:620px;">
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com/tasks/template-demo-01</div>
+      </div>
+      <div style="display:flex;height:420px;">
+        <div class="nn-sidebar">
+          <div class="nn-sb-brand"><div class="nn-brand-ic">⚡</div></div>
+          <div class="nn-nav">
+            <div class="nn-ni"><span class="material-icons nn-ni-ic">add</span></div>
+            <div class="nn-ni"><span class="material-icons nn-ni-ic">bolt</span></div>
+            <div class="nn-ni"><span class="material-icons nn-ni-ic">task_alt</span></div>
+            <div class="nn-ni"><span class="material-icons nn-ni-ic">hub</span></div>
+            <div class="nn-ni"><span class="material-icons nn-ni-ic">description</span></div>
+            <div class="nn-ni on"><span class="material-icons nn-ni-ic">account_tree</span></div>
+          </div>
+          <div class="nn-sb-foot">
+            <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">menu_book</span></div>
+            <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">bug_report</span></div>
+            <div class="nn-user-row"><div class="nn-av">PS</div></div>
+          </div>
+        </div>
+        <div class="nn-task-split" style="flex:1;">
+          <!-- Left: agent thread -->
+          <div class="nn-task-left">
+            <div class="nn-task-bc"><span>Tasks</span> › AP Invoice Processing</div>
+            <div class="nn-msgs">
+              <div class="nn-msg-u">Apply to sample invoice →</div>
+              <div class="nn-msg-a">
+                <div class="nn-step-line">Applying AP Invoice Processing schema</div>
+                <div class="nn-step-line">Running 14-field extraction</div>
+                <div class="nn-step-line">Matching against PO database</div>
+                <div class="nn-step-line">Suggesting GL codes</div>
+              </div>
+              <div class="nn-msg-a" style="color:#059669;font-weight:700;">✅ Done — 14 fields · PO matched · ERP-ready</div>
+              <div class="nn-msg-a" style="color:#555;font-size:9px;">GSTIN, PO matching, and GL code — added automatically by the template.</div>
+            </div>
+            <div class="nn-task-footer">
+              <div class="nn-reply-box" style="justify-content:flex-start;font-style:italic;">Ask follow-ups anytime — first, see what this saves you →</div>
+            </div>
+          </div>
+          <!-- Right: full 14-field structured output -->
+          <div class="nn-doc-panel">
+            <div class="nn-doc-topbar">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <div class="nn-doc-name">invoice_sept_2024.pdf</div>
+                <span style="font-size:7.5px;font-weight:700;background:#eff3ff;color:#3b63f0;border:1px solid #c3d7fd;padding:1.5px 6px;border-radius:10px;">AP Invoice Processing</span>
+              </div>
+              <div class="nn-doc-acts">⬇ ↗ ✕</div>
+            </div>
+            <div class="nn-doc-body" style="display:flex;flex-direction:column;overflow:hidden;">
+              <div class="lbl mb6">14 Structured Fields</div>
+              <div class="fields" style="gap:4px;flex:1;overflow-y:auto;padding-bottom:4px;">
+                <div class="frow"><span class="fl">Invoice No.</span><span class="fv">INV-2024-0891</span><span class="fc fhi">98%</span></div>
+                <div class="frow"><span class="fl">Vendor</span><span class="fv">ABC Corporation</span><span class="fc fhi">99%</span></div>
+                <div class="frow"><span class="fl">GSTIN</span><span class="fv">29AAKCK0418N1Z5</span><span class="fc fhi">95%</span></div>
+                <div class="frow"><span class="fl">Subtotal</span><span class="fv">₹3,60,000</span><span class="fc fhi">99%</span></div>
+                <div class="frow"><span class="fl">GST (18%)</span><span class="fv">₹64,800</span><span class="fc fhi">99%</span></div>
+                <div class="frow"><span class="fl">Total</span><span class="fv">₹4,24,800</span><span class="fc fhi">99%</span></div>
+                <div class="frow"><span class="fl">Due Date</span><span class="fv">Oct 15, 2024</span><span class="fc fhi">96%</span></div>
+                <!-- PO Match — template intelligence -->
+                <div class="frow" style="background:#f0fdf4;border-color:#bbf7d0;">
+                  <span class="fl" style="color:#059669;">PO Match</span>
+                  <span class="fv" style="color:#059669;">✓ PO-2024-089</span>
+                  <span style="font-size:7.5px;font-weight:700;background:#dcfce7;color:#15803d;border:1px solid #86efac;padding:2px 7px;border-radius:10px;">Matched</span>
+                </div>
+                <!-- GL Code — ERP intelligence -->
+                <div class="frow" style="background:#eff3ff;border-color:#c3d7fd;">
+                  <span class="fl" style="color:#3b63f0;">GL Code</span>
+                  <span class="fv" style="color:#3b63f0;">6200 — Accounts Payable</span>
+                  <span style="font-size:7.5px;font-weight:700;background:#eff3ff;color:#3b63f0;border:1px solid #c3d7fd;padding:2px 7px;border-radius:10px;">Auto</span>
+                </div>
+                <div class="frow" style="background:#f9fafb;"><span class="fl">+5 more fields</span><span style="font-size:8px;color:#9ca3af;">Due Amt, Bank, IFSC, PAN, Payment Terms</span></div>
+              </div>
+            </div>
+            <div style="padding:8px 10px;border-top:1px solid #e5e7eb;background:#fff;flex-shrink:0;">
+              <button class="btn-p" style="font-size:10.5px;">See what this saves you →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">3c — Template applied: structured output</span><span class="cap-n">The missing aha. 14 structured fields vs 6 raw — GSTIN, PO Match, GL code suggestion are the template's contribution. This is what makes the output ERP-ready, not just extracted.</span></div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="div"></div>
+
+
+<!-- ══════════════════════════════════════════
+     STEP 4 · TIME-SAVED INSIGHT
+══════════════════════════════════════════ -->
+<div class="step" id="step-4">
+  <div class="step-meta"><span class="step-label s4">Step 4 · Phase 1</span><span class="step-title">Time-Saved Insight</span></div>
+  <p class="step-note">Converts the demo into a business case — 66 hrs/month, ₹18K in errors avoided. The CFO-shareable quote enables internal championing, which matters in enterprise where the product user and the budget owner are rarely the same person.</p>
+
+  <div class="grid-1">
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com/tasks/demo-01/insight</div>
+      </div>
+      <div class="nn-inner">
+        <div class="nn-wrap">
+          <div class="nn-sidebar">
+            <div class="nn-sb-brand"><div class="nn-brand-ic">⚡</div></div>
+            <div class="nn-nav">
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">add</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bolt</span></div>
+              <div class="nn-ni on"><span class="material-icons nn-ni-ic">task_alt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">hub</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">description</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">account_tree</span></div>
+            </div>
+            <div class="nn-sb-foot">
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">menu_book</span></div>
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">bug_report</span></div>
+              <div class="nn-user-row"><div class="nn-av">PS</div></div>
+            </div>
+          </div>
+          <div class="nn-main" style="background:#fff;padding:20px;display:flex;flex-direction:column;">
+
+            <div style="display:inline-flex;align-items:center;gap:5px;background:#eff3ff;border:1px solid #c3d7fd;border-radius:20px;padding:3px 10px;margin-bottom:12px;">
+              <span class="material-icons" style="font-size:12px;color:#3b63f0;">account_tree</span>
+              <span style="font-size:8.5px;font-weight:700;color:#3b63f0;">AP Invoice Processing · 500 invoices/month</span>
+            </div>
+            <div style="font-size:14px;font-weight:800;color:#0a0f1e;margin-bottom:4px;">Here's what this saves your team</div>
+            <div style="font-size:10px;color:#9ca3af;margin-bottom:16px;">Industry average estimate, ~500 invoices/month — <a href="#" style="color:#3b63f0;font-weight:600;text-decoration:none;">adjust for your volume →</a></div>
+
+            <!-- Hero stats — numbers are the headline -->
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;">
+              <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px 10px;text-align:center;">
+                <div style="font-size:26px;font-weight:900;color:#059669;line-height:1.1;">66</div>
+                <div style="font-size:8.5px;font-weight:700;color:#047857;margin-top:3px;">hrs saved</div>
+                <div style="font-size:7.5px;color:#9ca3af;margin-top:1px;">per month</div>
+              </div>
+              <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px 10px;text-align:center;">
+                <div style="font-size:26px;font-weight:900;color:#059669;line-height:1.1;">₹18K</div>
+                <div style="font-size:8.5px;font-weight:700;color:#047857;margin-top:3px;">errors avoided</div>
+                <div style="font-size:7.5px;color:#9ca3af;margin-top:1px;">per month</div>
+              </div>
+              <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px 10px;text-align:center;">
+                <div style="font-size:26px;font-weight:900;color:#059669;line-height:1.1;">99%</div>
+                <div style="font-size:8.5px;font-weight:700;color:#047857;margin-top:3px;">accuracy</div>
+                <div style="font-size:7.5px;color:#9ca3af;margin-top:1px;">zero re-entry</div>
+              </div>
+            </div>
+
+            <!-- Before / After comparison -->
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:#f9fafb;border-radius:8px;margin-bottom:16px;">
+              <div style="text-align:center;flex:1;">
+                <div style="font-size:22px;font-weight:900;color:#dc2626;line-height:1.1;">8 min</div>
+                <div style="font-size:8px;color:#9ca3af;margin-top:3px;">manual</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;">
+                <span class="material-icons" style="font-size:18px;color:#d1d5db;">arrow_forward</span>
+                <span style="font-size:8px;font-weight:700;color:#3b63f0;">120×</span>
+              </div>
+              <div style="text-align:center;flex:1;">
+                <div style="font-size:22px;font-weight:900;color:#3b63f0;line-height:1.1;">4 sec</div>
+                <div style="font-size:8px;color:#9ca3af;margin-top:3px;">with Nanonets</div>
+              </div>
+            </div>
+
+            <!-- CFO snippet — clean quote, no nested boxes -->
+            <div style="border:1px solid #e5e7eb;border-radius:8px;padding:12px 16px;margin-bottom:16px;">
+              <div style="font-size:8.5px;font-weight:700;color:#374151;margin-bottom:8px;">Share with your CFO</div>
+              <div style="font-size:9.5px;color:#374151;line-height:1.7;font-style:italic;border-left:3px solid #3b63f0;padding-left:10px;margin-bottom:8px;">"Nanonets saves us 66 hrs/month and ~₹18K in error corrections — on AP invoices alone."</div>
+              <button class="btn-s" style="font-size:9px;padding:4px 10px;">Copy</button>
+            </div>
+
+            <button class="btn-p" style="font-size:11px;">Make this template yours →</button>
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">Value Insight</span><span class="cap-n">66 hrs/month · ₹18K errors avoided · 99% accuracy. CFO-shareable quote enables internal championing.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+
+<!-- ══════════════════════════════════════════
+     STEP 5 · TEMPLATE EDITING + IKEA EFFECT
+══════════════════════════════════════════ -->
+<div class="step" id="step-5">
+  <div class="step-meta"><span class="step-label s5">Step 5 · Phase 1</span><span class="step-title">Template Editing + IKEA Effect</span></div>
+  <p class="step-note">IKEA effect: users who invest effort customising a template are significantly more likely to return. Adding GL Code and saving as "My AP Template" creates ownership. 5b closes with the daily workflow loop — upload → extract → posts to SAP — planting the habit before the session ends.</p>
+
+  <div class="grid-2">
+
+    <!-- 5a — Field editor -->
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com/workflows/ap-invoice/edit</div>
+      </div>
+      <div class="nn-inner">
+        <div class="nn-wrap">
+          <div class="nn-sidebar">
+            <div class="nn-sb-brand"><div class="nn-brand-ic">⚡</div></div>
+            <div class="nn-nav">
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">add</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bolt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">task_alt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">hub</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">description</span></div>
+              <div class="nn-ni on"><span class="material-icons nn-ni-ic">account_tree</span></div>
+            </div>
+            <div class="nn-sb-foot">
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">menu_book</span></div>
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">bug_report</span></div>
+              <div class="nn-user-row"><div class="nn-av">PS</div></div>
+            </div>
+          </div>
+          <div class="nn-main" style="background:#fff;padding:16px 20px;display:flex;flex-direction:column;">
+
+            <div style="margin-bottom:16px;">
+              <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                <span class="material-icons" style="font-size:12px;color:#9ca3af;">edit</span>
+                <span style="font-size:8.5px;color:#9ca3af;">Customising: AP Invoice Processing</span>
+              </div>
+              <div style="font-size:13px;font-weight:800;color:#0a0f1e;margin-bottom:4px;">Make it yours</div>
+              <div style="font-size:10px;color:#9ca3af;">Add fields specific to your team, then save.</div>
+            </div>
+
+            <!-- Field list — clean rows, drag handle, type badge -->
+            <div style="font-size:8.5px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Fields</div>
+            <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;margin-bottom:8px;">
+              <div style="display:flex;align-items:center;padding:8px 12px;border-bottom:1px solid #f0f0f0;background:#fff;">
+                <span class="material-icons" style="font-size:14px;color:#d1d5db;margin-right:8px;flex-shrink:0;">drag_indicator</span>
+                <span style="font-size:10px;font-weight:500;color:#374151;flex:1;">Invoice No.</span>
+                <span style="font-size:8px;background:#f3f4f6;color:#6b7280;padding:2px 8px;border-radius:6px;margin-right:8px;">Text</span>
+                <span class="material-icons" style="font-size:13px;color:#d1d5db;cursor:pointer;">close</span>
+              </div>
+              <div style="display:flex;align-items:center;padding:8px 12px;border-bottom:1px solid #f0f0f0;background:#fff;">
+                <span class="material-icons" style="font-size:14px;color:#d1d5db;margin-right:8px;flex-shrink:0;">drag_indicator</span>
+                <span style="font-size:10px;font-weight:500;color:#374151;flex:1;">Vendor Name</span>
+                <span style="font-size:8px;background:#f3f4f6;color:#6b7280;padding:2px 8px;border-radius:6px;margin-right:8px;">Text</span>
+                <span class="material-icons" style="font-size:13px;color:#d1d5db;cursor:pointer;">close</span>
+              </div>
+              <div style="display:flex;align-items:center;padding:8px 12px;border-bottom:1px solid #f0f0f0;background:#fff;">
+                <span class="material-icons" style="font-size:14px;color:#d1d5db;margin-right:8px;flex-shrink:0;">drag_indicator</span>
+                <span style="font-size:10px;font-weight:500;color:#374151;flex:1;">Total Amount</span>
+                <span style="font-size:8px;background:#f3f4f6;color:#6b7280;padding:2px 8px;border-radius:6px;margin-right:8px;">Currency</span>
+                <span class="material-icons" style="font-size:13px;color:#d1d5db;cursor:pointer;">close</span>
+              </div>
+              <!-- New field — highlighted green, IKEA moment -->
+              <div style="padding:8px 12px;background:#f0fdf4;border-bottom:1px solid #bbf7d0;">
+                <div style="display:flex;align-items:center;">
+                  <span class="material-icons" style="font-size:14px;color:#86efac;margin-right:8px;flex-shrink:0;">drag_indicator</span>
+                  <span style="font-size:10px;font-weight:600;color:#059669;flex:1;">GL Code <span style="font-size:7.5px;font-weight:700;background:#dcfce7;color:#059669;padding:2px 6px;border-radius:6px;margin-left:4px;">New</span></span>
+                  <span style="font-size:8px;background:#dcfce7;color:#059669;padding:2px 8px;border-radius:6px;margin-right:8px;">Number</span>
+                  <span class="material-icons" style="font-size:13px;color:#86efac;cursor:pointer;">close</span>
+                </div>
+                <div style="font-size:8px;color:#6ee7b7;margin-top:4px;padding-left:22px;">Auto-syncs to SAP as GL 6200</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:9px;color:#9ca3af;cursor:pointer;margin-bottom:16px;padding:4px 0;">
+              <span class="material-icons" style="font-size:14px;">add</span> Add another field
+            </div>
+
+            <div style="font-size:8.5px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Connectors</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+              <div class="cpill-confirmed"><div class="cdot cdot-ok"></div>SAP</div>
+              <div class="cpill-confirmed"><div class="cdot cdot-ok"></div>Tally</div>
+              <div class="cpill" style="cursor:pointer;border-style:dashed;color:#9ca3af;">+ Add</div>
+            </div>
+
+            <button class="btn-p" style="font-size:11px;">Save template →</button>
+            <div style="font-size:8.5px;color:#9ca3af;text-align:center;margin-top:8px;">Then you're ready to process live invoices</div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">5a — Field editor</span><span class="cap-n">Editing AP Invoice Processing. GL Code addition triggers ownership. SAP sync hint seeds the Phase 2 story.</span></div>
+    </div>
+
+    <!-- 6b — Clean completion -->
+    <div class="screen">
+      <div class="browser-bar">
+        <div class="bdot bd-r"></div><div class="bdot bd-y"></div><div class="bdot bd-g"></div>
+        <div class="burl">agents.nanonets.com/workflows/my-ap-template</div>
+      </div>
+      <div class="nn-inner">
+        <div class="nn-wrap">
+          <div class="nn-sidebar">
+            <div class="nn-sb-brand"><div class="nn-brand-ic">⚡</div></div>
+            <div class="nn-nav">
+              <div class="nn-ni on"><span class="material-icons nn-ni-ic">add</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">bolt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">task_alt</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">hub</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">description</span></div>
+              <div class="nn-ni"><span class="material-icons nn-ni-ic">account_tree</span></div>
+            </div>
+            <div class="nn-sb-foot">
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">menu_book</span></div>
+              <div class="nn-sb-link"><span class="material-icons" style="font-size:16px;">bug_report</span></div>
+              <div class="nn-user-row"><div class="nn-av">PS</div></div>
+            </div>
+          </div>
+          <div class="nn-main" style="background:#fff;padding:20px;display:flex;flex-direction:column;align-items:center;">
+
+            <!-- Success mark -->
+            <div style="width:44px;height:44px;background:#ecfdf5;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
+              <span class="material-icons" style="font-size:24px;color:#059669;">check_circle</span>
+            </div>
+            <div style="font-size:15px;font-weight:800;color:#0a0f1e;margin-bottom:4px;text-align:center;">You're all set</div>
+            <div style="font-size:10px;color:#9ca3af;text-align:center;margin-bottom:20px;">Your workflow is live. Upload your first invoice to see it run.</div>
+
+            <!-- Template summary card -->
+            <div style="width:100%;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+                <div style="font-size:11px;font-weight:700;color:#111;">My AP Template</div>
+                <span style="font-size:8px;font-weight:700;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;padding:2px 8px;border-radius:20px;">Active</span>
+              </div>
+              <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;">
+                <span style="font-size:8px;background:#f0f9ff;color:#0369a1;border:1px solid #bae6fd;padding:2px 7px;border-radius:20px;font-weight:600;">Invoice No.</span>
+                <span style="font-size:8px;background:#f0f9ff;color:#0369a1;border:1px solid #bae6fd;padding:2px 7px;border-radius:20px;font-weight:600;">Vendor</span>
+                <span style="font-size:8px;background:#f0f9ff;color:#0369a1;border:1px solid #bae6fd;padding:2px 7px;border-radius:20px;font-weight:600;">Amount</span>
+                <span style="font-size:8px;background:#f0fdf4;color:#059669;border:1px solid #bbf7d0;padding:2px 7px;border-radius:20px;font-weight:700;">GL Code ✓</span>
+                <span style="font-size:8px;background:#f0f9ff;color:#9ca3af;border:1px solid #e5e7eb;padding:2px 7px;border-radius:20px;">+10 more</span>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <div class="cpill-confirmed"><div class="cdot cdot-ok"></div>SAP</div>
+                <div class="cpill-confirmed"><div class="cdot cdot-ok"></div>Tally</div>
+              </div>
+            </div>
+
+            <!-- Habit loop: what happens every time they upload -->
+            <div style="margin-bottom:16px;">
+              <div style="font-size:8.5px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">What happens every time you upload:</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="flex:1;background:#f9fafb;border:1px solid #e5e7eb;border-radius:9px;padding:10px 8px;text-align:center;">
+                  <span class="material-icons" style="font-size:18px;color:#374151;display:block;margin-bottom:4px;">upload_file</span>
+                  <div style="font-size:8px;font-weight:600;color:#374151;">You upload</div>
+                  <div style="font-size:7.5px;color:#9ca3af;margin-top:1px;">any AP invoice</div>
+                </div>
+                <span class="material-icons" style="font-size:16px;color:#d1d5db;flex-shrink:0;">arrow_forward</span>
+                <div style="flex:1;background:#eff3ff;border:1px solid #c3d7fd;border-radius:9px;padding:10px 8px;text-align:center;">
+                  <div style="font-size:16px;font-weight:900;color:#3b63f0;margin-bottom:4px;">⚡</div>
+                  <div style="font-size:8px;font-weight:600;color:#374151;">Nanonets extracts</div>
+                  <div style="font-size:7.5px;color:#9ca3af;margin-top:1px;">14 fields, PO matched</div>
+                </div>
+                <span class="material-icons" style="font-size:16px;color:#d1d5db;flex-shrink:0;">arrow_forward</span>
+                <div style="flex:1;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:10px 8px;text-align:center;">
+                  <span class="material-icons" style="font-size:18px;color:#059669;display:block;margin-bottom:4px;">storage</span>
+                  <div style="font-size:8px;font-weight:600;color:#374151;">Posts to SAP</div>
+                  <div style="font-size:7.5px;color:#9ca3af;margin-top:1px;">GL code auto-assigned</div>
+                  <div style="font-size:7px;color:#bbb;margin-top:4px;font-style:italic;">Connect live account in Settings</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-p" style="font-size:11.5px;width:100%;margin-bottom:8px;">Upload an invoice →</button>
+            <div style="font-size:9px;color:#9ca3af;text-align:center;">Want this to run automatically? <a href="#" style="color:#3b63f0;font-weight:600;text-decoration:none;">Set up an agent</a></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="screen-cap"><span class="cap-t">5b — Onboarding complete</span><span class="cap-n">"My AP Template" saved. Daily workflow loop visible before user leaves. Upload CTA closes the onboarding and opens the product.</span></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
