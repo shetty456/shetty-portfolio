@@ -22,8 +22,8 @@ const impacts = [
   {
     icon: FlaskConical,
     title: 'PLG Growth',
-    description: 'Designed and launched a PLG creator-share loop at Triveni, scaling to 90+ Weekly Active Educators with ~70% cohort retention.',
-    metric: '90+ WAEs',
+    description: 'Designed and launched a creator-led PLG sharing loop at Triveni, growing WAU to a peak of 259 with 70% retention in a key user cohort.',
+    metric: '259 WAU Peak',
     color: 'violet',
   },
   {

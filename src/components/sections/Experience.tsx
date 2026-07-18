@@ -13,8 +13,9 @@ const experiences = [
     bullets: [
       'Led strategic pivot from AI-first to Teacher-Led trust model, improving D1 retention from 15% to 28% in 6 weeks',
       'Analyzed user behavior via SQL and funnel data to deprecate low-impact AI Notes, refocusing roadmap on Quiz-First core loop',
-      'Designed and launched PLG creator-share loop, scaling to 90+ Weekly Active Educators with ~70% cohort retention',
+      'Designed and launched a creator-led PLG sharing loop, growing WAU to a peak of 259 while achieving 70% retention in a key user cohort',
       'Ran 3 monetization experiments (entry-fee tournaments, gated quizzes, tiered access), validating willingness-to-pay across 2 tiers and establishing early ARPU benchmarks that informed subscription pricing',
+      'Built an agentic AI pipeline (Agno) for PDF-to-notes and quiz generation with quality evals',
       'Defined north-star metrics (activation → retention → creator output) and aligned execution to unit economics',
     ],
   },
