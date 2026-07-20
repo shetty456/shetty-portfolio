@@ -1,12 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import PrototypeViewer from '@/components/ui/PrototypeViewer'
+import { SCREENS, SCREEN_NAMES, SCREEN_TO_STEP, STEP_TO_SCREEN } from '@/components/prototype/nanonets'
 
 const STEPS = [
   {
@@ -61,6 +62,16 @@ const STEPS = [
 
 export default function NanonetsOnboardingCaseStudy() {
   const [activeStep, setActiveStep] = useState(0)
+  const [protoCommand, setProtoCommand] = useState<{ screen: number; seq: number } | null>(null)
+
+  function handleStepClick(stepId: number) {
+    setActiveStep(stepId)
+    setProtoCommand(prev => ({ screen: STEP_TO_SCREEN[stepId], seq: (prev?.seq ?? 0) + 1 }))
+  }
+
+  function handleScreenChange(screen: number) {
+    setActiveStep(SCREEN_TO_STEP[screen])
+  }
 
   return (
     <>
@@ -253,7 +264,7 @@ export default function NanonetsOnboardingCaseStudy() {
               {STEPS.map(s => (
                 <button
                   key={s.id}
-                  onClick={() => setActiveStep(s.id)}
+                  onClick={() => handleStepClick(s.id)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                     activeStep === s.id
                       ? 'bg-[#3b63f0] text-white border-[#3b63f0] shadow-sm'
@@ -288,16 +299,13 @@ export default function NanonetsOnboardingCaseStudy() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Wireframe image */}
-            <div className="rounded-xl overflow-hidden border border-slate-200">
-              <Image
-                src="/case-studies/nanonets/nanonets_onboarding_v4.png"
-                alt="Nanonets onboarding flow wireframes — 6 steps from sign-up to first experienced value"
-                width={1440}
-                height={2400}
-                className="w-full h-auto"
-              />
-            </div>
+            {/* Interactive prototype */}
+            <PrototypeViewer
+              screens={SCREENS}
+              screenNames={SCREEN_NAMES}
+              command={protoCommand}
+              onScreenChange={handleScreenChange}
+            />
           </Section>
 
           {/* ── Success Metrics ──────────────────────── */}
