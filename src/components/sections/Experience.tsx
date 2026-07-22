@@ -51,6 +51,7 @@ const experiences = [
     bullets: [
       'Led strategic pivot from feature-driven to demand-first GTM — 20+ salon interviews to identify top-3 booking pain points',
       'Redesigned value proposition around salon owner ROI, resulting in higher-quality inbound leads and improved demo conversion',
+      'Conducted primary user research with 20+ salons to uncover discovery and booking pain points',
       'Built push-notification and re-engagement experiments, testing PLG loops and repeat usage hypotheses',
       'Owned end-to-end product discovery, experimentation, and early GTM execution',
     ],
