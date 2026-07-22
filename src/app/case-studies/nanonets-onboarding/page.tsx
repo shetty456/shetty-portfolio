@@ -1,77 +1,14 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import PrototypeViewer from '@/components/ui/PrototypeViewer'
-import { SCREENS, SCREEN_NAMES, SCREEN_TO_STEP, STEP_TO_SCREEN } from '@/components/prototype/nanonets'
+import EmbedViewer from '@/components/ui/EmbedViewer'
 
-const STEPS = [
-  {
-    id: 0,
-    label: 'Step 0',
-    phase: null,
-    title: 'Sign-Up Page',
-    color: 'bg-slate-100 text-slate-700 border-slate-300',
-    note: 'Entry point. The right-column social proof (Roche, Ryanair, Schneider, G2/Capterra ratings) pre-empts the "is this legit?" concern before the user fills the form — reducing drop-off at the first friction point.',
-  },
-  {
-    id: 1,
-    label: 'Step 1',
-    phase: 'Phase 1',
-    title: 'Role-Based Entry',
-    color: 'bg-blue-50 text-blue-700 border-blue-200',
-    note: 'One question, one tap. Role selection personalises every downstream step — templates, demo content, and value framing. Finance & Accounts pre-selected as the highest-volume segment with the clearest ROI story.',
-  },
-  {
-    id: 2,
-    label: 'Step 2',
-    phase: 'Phase 1',
-    title: 'Pre-Loaded Demo',
-    color: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    note: 'Value before commitment. A pre-loaded AP invoice extracts in 4 seconds with 97–99% confidence scores — directly addressing the Finance Manager\'s core trust problem. No upload required, zero setup friction.',
-  },
-  {
-    id: 3,
-    label: 'Step 3',
-    phase: 'Phase 1',
-    title: 'Template Marketplace',
-    color: 'bg-purple-50 text-purple-700 border-purple-200',
-    note: 'Social proof at the point of commitment — named enterprise customers and ratings on every card. Screen 3c is the core aha: 14 structured fields vs 6 raw, with GSTIN, PO match, and GL code added by the template. This is Nanonets\' real value over commodity OCR.',
-  },
-  {
-    id: 4,
-    label: 'Step 4',
-    phase: 'Phase 1',
-    title: 'Time-Saved Insight',
-    color: 'bg-orange-50 text-orange-700 border-orange-200',
-    note: 'Converts the demo into a business case — 66 hrs/month, ₹18K in errors avoided. The CFO-shareable quote enables internal championing, which matters in enterprise where the product user and the budget owner are rarely the same person.',
-  },
-  {
-    id: 5,
-    label: 'Step 5',
-    phase: 'Phase 1',
-    title: 'Template Editing + IKEA Effect',
-    color: 'bg-sky-50 text-sky-700 border-sky-200',
-    note: 'IKEA effect: users who invest effort customising a template are significantly more likely to return. Adding GL Code and saving as "My AP Template" creates ownership. 5b closes with the daily workflow loop — upload → extract → posts to SAP — planting the habit before the session ends.',
-  },
-]
+const ONBOARDING_URL = 'https://nanonets-onboarding.netlify.app'
 
 export default function NanonetsOnboardingCaseStudy() {
-  const [activeStep, setActiveStep] = useState(0)
-  const [protoCommand, setProtoCommand] = useState<{ screen: number; seq: number } | null>(null)
-
-  function handleStepClick(stepId: number) {
-    setActiveStep(stepId)
-    setProtoCommand(prev => ({ screen: STEP_TO_SCREEN[stepId], seq: (prev?.seq ?? 0) + 1 }))
-  }
-
-  function handleScreenChange(screen: number) {
-    setActiveStep(SCREEN_TO_STEP[screen])
-  }
 
   return (
     <>
@@ -99,6 +36,9 @@ export default function NanonetsOnboardingCaseStudy() {
             <p>Users interpret Nanonets as a generic extraction tool rather than a system for automating enterprise document workflows.</p>
             <p>Core insight is that Nanonets fails to communicate pre-defined workflow-to-business-value during their onboarding flow.</p>
             <p>My recommendation is to implement a 5-step flow that takes a new Nanonets user from sign-up to first experienced value in under 5 minutes, helping the user understand workflow automation that saves manual effort.</p>
+            <a href="#prototype" className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-slate-700 transition-colors mt-1">
+              ↓ Skip to interactive prototype
+            </a>
           </Section>
 
           {/* ── Company & Context ────────────────────── */}
@@ -256,57 +196,14 @@ export default function NanonetsOnboardingCaseStudy() {
           </Section>
 
           {/* ── Solution Wireframes ──────────────────── */}
+          <div id="prototype">
           <Section title="Solution Wireframes">
-            <p className="text-slate-500 text-sm mb-6">A 6-step onboarding flow from sign-up to first experienced value. Click a step to jump to it in the prototype below.</p>
-
-            {/* Step pill navigator */}
-            <div className="flex flex-wrap gap-2 mb-5">
-              {STEPS.map(s => (
-                <button
-                  key={s.id}
-                  onClick={() => handleStepClick(s.id)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                    activeStep === s.id
-                      ? 'bg-[#3b63f0] text-white border-[#3b63f0] shadow-sm'
-                      : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300'
-                  }`}
-                >
-                  {s.label}
-                  {s.phase && (
-                    <span className="text-[10px] font-normal opacity-70">· {s.phase}</span>
-                  )}
-                </button>
-              ))}
+            <p className="text-slate-500 text-sm">A 6-step onboarding flow from sign-up to first experienced value.</p>
+            <div className="-mx-[30px] w-[calc(100%+60px)]">
+              <EmbedViewer url={ONBOARDING_URL} height={660} />
             </div>
-
-            {/* Animated step card */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeStep}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-                className="mb-5 p-4 rounded-xl border border-slate-100 bg-slate-50"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${STEPS[activeStep].color}`}>
-                    {STEPS[activeStep].label}{STEPS[activeStep].phase ? ` · ${STEPS[activeStep].phase}` : ''}
-                  </span>
-                  <span className="text-sm font-bold text-slate-900">{STEPS[activeStep].title}</span>
-                </div>
-                <p className="text-sm text-slate-600 leading-relaxed">{STEPS[activeStep].note}</p>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Interactive prototype */}
-            <PrototypeViewer
-              screens={SCREENS}
-              screenNames={SCREEN_NAMES}
-              command={protoCommand}
-              onScreenChange={handleScreenChange}
-            />
           </Section>
+          </div>
 
           {/* ── Success Metrics ──────────────────────── */}
           <Section title="Success Metrics">

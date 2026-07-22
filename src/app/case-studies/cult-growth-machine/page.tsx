@@ -1,16 +1,14 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Maximize2, X } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import EmbedViewer from '@/components/ui/EmbedViewer'
 
 const DASHBOARD_URL = 'https://cultdashboard.netlify.app/'
 
 export default function CultGrowthMachineCaseStudy() {
-  const [fullscreen, setFullscreen] = useState(false)
-
   return (
     <>
       <Header />
@@ -32,27 +30,8 @@ export default function CultGrowthMachineCaseStudy() {
           </h1>
           <p className="text-slate-400 text-sm mb-8">Growth · Health-tech · Analytics</p>
 
-          {/* Dashboard hero — single iframe, CSS-expanded to fullscreen */}
-          <div
-            className={
-              fullscreen
-                ? 'fixed inset-0 z-50 bg-black mb-0'
-                : 'relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 mb-12'
-            }
-          >
-            <iframe
-              src={DASHBOARD_URL}
-              className={fullscreen ? 'w-full h-full' : 'w-full h-[520px]'}
-              allowFullScreen
-            />
-            {/* Expand / collapse button — always floated top-right */}
-            <button
-              onClick={() => setFullscreen(f => !f)}
-              className="absolute top-3 right-3 bg-red-500 hover:bg-red-600 rounded-lg p-2 text-white transition-all shadow-md"
-              title={fullscreen ? 'Exit fullscreen' : 'Expand dashboard'}
-            >
-              {fullscreen ? <X className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
-            </button>
+          <div className="mb-12">
+            <EmbedViewer url={DASHBOARD_URL} />
           </div>
 
           {/* ── Overview ─────────────────────────────── */}
