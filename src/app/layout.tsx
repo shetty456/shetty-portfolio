@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | Sunil Hanamshetty',
   },
   description:
-    'Experimentation-driven PM with 4+ years building B2C consumer products in EdTech, FinTech, and Health. 2× Founder, 1M+ users shipped.',
+    'Two-time founder and product manager building consumer growth and fintech products. Triveni reached 259 peak WAU; Miracle of Mind crossed 1M launch-day downloads.',
   keywords: [
     'Product Manager',
     'PM Portfolio',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'Sunil Hanamshetty',
     title: 'Sunil Hanamshetty — Product Manager',
     description:
-      'Experimentation-driven PM with 4+ years building B2C consumer products. 2× Founder, 1M+ users shipped.',
+      'Two-time founder and product manager building consumer growth and fintech products. Triveni reached 259 peak WAU; Miracle of Mind crossed 1M launch-day downloads.',
     images: [
       {
         url: '/opengraph-image',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sunil Hanamshetty — Product Manager',
     description:
-      'Experimentation-driven PM with 4+ years building B2C consumer products. 2× Founder, 1M+ users shipped.',
+      'Two-time founder and product manager building consumer growth and fintech products. Triveni reached 259 peak WAU; Miracle of Mind crossed 1M launch-day downloads.',
     images: ['/opengraph-image'],
   },
 }
@@ -65,7 +65,7 @@ const personSchema = {
   name: 'Sunil Hanamshetty',
   jobTitle: 'Product Manager',
   description:
-    'Experimentation-driven PM with 4+ years building B2C consumer products in EdTech, FinTech, and Health. 2× Founder, 1M+ users shipped.',
+    'Two-time founder and product manager building consumer growth and fintech products. Triveni reached 259 peak WAU; Miracle of Mind crossed 1M launch-day downloads.',
   url: BASE_URL,
   email: 'hanamshettysunil6@gmail.com',
 }

@@ -51,7 +51,7 @@ export default function OgImage() {
               lineHeight: 1.4,
             }}
           >
-            Product Manager · 2× Founder · 1M+ users shipped
+            Product Manager · 2× Founder · Consumer Growth & Fintech
           </div>
         </div>
 

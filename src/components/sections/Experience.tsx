@@ -8,52 +8,46 @@ const experiences = [
   {
     company: 'Triveni',
     role: 'Founder & Product Lead',
-    dateRange: '2025 — Present',
+    dateRange: 'May 2025 — Present',
     type: 'Founder',
     bullets: [
-      'Led strategic pivot from AI-first to Teacher-Led trust model, improving D1 retention from 15% to 28% in 6 weeks',
-      'Analyzed user behavior via SQL and funnel data to deprecate low-impact AI Notes, refocusing roadmap on Quiz-First core loop',
-      'Designed and launched a creator-led PLG sharing loop, growing WAU to a peak of 259 while achieving 70% retention in a key user cohort',
-      'Ran 3 monetization experiments (entry-fee tournaments, gated quizzes, tiered access), validating willingness-to-pay across 2 tiers and establishing early ARPU benchmarks that informed subscription pricing',
-      'Built an agentic AI pipeline (Agno) for PDF-to-notes and quiz generation with quality evals',
-      'Defined north-star metrics (activation → retention → creator output) and aligned execution to unit economics',
+      'Deprioritized AI Notes after SQL cohort and funnel analysis and shifted to teacher-led quizzes; Mixpanel D1 retention was 15% in an earlier period and 28% in a later period.',
+      'Built a teacher-led content model with 32 active creators; 19 created content again at least 8 weeks after their first record; reached 259 peak WAU.',
+      'Ran early Rs 10/20 gated quizzes and later Rs 399/599 CET courses; reached 22 paying customers and Rs 7,744 gross across both.',
+      'Built an Agno pipeline that turns PDFs into notes and quizzes, with an LLM-as-judge check that regenerates outputs failing accuracy rules.',
     ],
   },
   {
     company: 'Isha Foundation',
     role: 'Product Engineer (Product & UX)',
-    dateRange: '2024 — 2025',
+    dateRange: 'Jun 2024 — Mar 2025',
     type: 'Consumer',
     bullets: [
-      'Built and shipped Flutter features for a consumer app that reached 1M+ downloads in less than 24 hours',
-      'Designed and implemented a backend traffic management system preventing cascading failures during a 1M+ user launch',
-      'Partnered with Product and Design to deliver high-fidelity UX, balancing speed, usability, and reliability under scale',
-      'Acted as bridge between product intent and engineering execution during high-risk launches',
+      'Owned the Flutter build of audio listening, sharing, quote capture, and profiles for Miracle of Mind, which crossed 1M downloads within 24 hours of launch.',
+      'Built a remote feature switch to hide Sadhguru Wisdom in the UI without an app update if its third-party API failed under launch traffic.',
     ],
   },
   {
     company: 'Yelow',
-    role: 'Software Engineer (Systems & Funnels)',
-    dateRange: '2023 — 2024',
+    role: 'Software Engineer (Loan Origination Product)',
+    dateRange: 'Jan 2023 — Jun 2024',
     type: 'FinTech',
     bullets: [
-      'Built admin-triggered fallback flows to recover KYC applications during third-party API failures, improving funnel completion',
-      'Shipped high-conversion landing page within a 7-day sprint, accelerating PMF experiments',
-      'Led 10+ Banking and KYC integrations supporting a 500-user FinTech pilot across vendors and internal teams',
-      'Contributed to API strategy and system design, balancing compliance, reliability, and speed',
+      'Built the full auto-loan application journey as sole frontend engineer: OTP, PAN, Aadhaar, CKYC, income checks, loan calculator, and disbursal.',
+      'Designed admin-triggered recovery for applications stalled by KYC API failures, so ops could fix and resubmit them instead of losing the applicant mid-funnel.',
+      'Integrated 10+ bank and KYC partners for a 500-user pilot, including OneMoney (Account Aggregator) and OCR document checks.',
+      'Shipped a customer landing page in a 7-day sprint to test demand before the full launch.',
     ],
   },
   {
     company: 'Mignon',
     role: 'Co-founder',
-    dateRange: '2022 — 2023',
+    dateRange: 'Jan 2022 — Aug 2023',
     type: 'Founder',
     bullets: [
-      'Led strategic pivot from feature-driven to demand-first GTM — 20+ salon interviews to identify top-3 booking pain points',
-      'Redesigned value proposition around salon owner ROI, resulting in higher-quality inbound leads and improved demo conversion',
-      'Conducted primary user research with 20+ salons to uncover discovery and booking pain points',
-      'Built push-notification and re-engagement experiments, testing PLG loops and repeat usage hypotheses',
-      'Owned end-to-end product discovery, experimentation, and early GTM execution',
+      'Conducted 20+ salon-owner interviews to validate booking and customer-discovery pain points, translating qualitative research into early product priorities.',
+      'Shipped push notifications in response to salon-owner requests.',
+      'Continued Mignon part-time after joining Yelow in Jan 2023, supporting onboarded salons while exploring ways to make the business viable through Aug 2023.',
     ],
   },
 ]
@@ -118,6 +112,18 @@ export default function Experience() {
                 </ul>
               </motion.div>
             ))}
+          </div>
+        </div>
+        <div className="mt-16 grid md:grid-cols-2 gap-8 border-t border-slate-100 pt-10">
+          <div>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Education</h3>
+            <p className="text-slate-600">University of Horticultural Sciences, Bagalkot</p>
+            <p className="text-slate-500 text-sm">B.Tech Food Technology · CGPA 7.9/10 · 2016–2020</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Certification</h3>
+            <p className="text-slate-600">Harvard CS50 (online)</p>
+            <p className="text-slate-500 text-sm">Introduction to Computer Science · Sep 2021</p>
           </div>
         </div>
       </div>

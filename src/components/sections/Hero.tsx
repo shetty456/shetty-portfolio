@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight, Download } from 'lucide-react'
 
 const stats = [
-  { value: '1M+', label: 'Users Shipped' },
+  { value: '1M+', label: 'Miracle of Mind downloads on launch day' },
   { value: '2×', label: 'Founder' },
-  { value: '4+', label: 'Years Building Products' },
+  { value: '259', label: 'Peak WAU at Triveni' },
 ]
 
 export default function Hero() {
@@ -54,7 +54,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base text-slate-500 leading-relaxed mb-6 max-w-xl"
             >
-              Product Manager with 4+ years shipping EdTech, FinTech, and Health products at 1M+ user scale.
+              Two-time founder with an engineering base. I build consumer products across learning, fintech, and wellbeing.
             </motion.p>
 
             {/* CTAs */}

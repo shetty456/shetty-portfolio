@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 const description =
-  "How redesigning Nanonets' onboarding cut time-to-value to under 5 minutes and lifted activation by 12 points."
+  "A proposed Nanonets onboarding redesign targeting first value in under 5 minutes, with modeled activation scenarios."
 
 export const metadata: Metadata = {
   title: 'Nanonets Onboarding Redesign — Case Study',

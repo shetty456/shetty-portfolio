@@ -40,7 +40,7 @@ export default function Projects() {
             <div className="lg:w-2/5 bg-slate-50 p-10 flex flex-col gap-6">
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full">Solo Build</span>
-                <span className="text-xs font-semibold text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-full">AI / LLM · 1 day</span>
+                <span className="text-xs font-semibold text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-full">Hackathon · Jun 2026</span>
               </div>
 
               <div>
@@ -50,9 +50,11 @@ export default function Projects() {
                   </h3>
                   <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover:text-blue-500 flex-shrink-0 mt-0.5 transition-colors" />
                 </div>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  LLM pipeline that converts blood report images/PDFs into plain-language summaries with colour-coded verdicts. Core trade-off: tightened classification thresholds to prevent false Urgents — recall traded for trust, deliberately.
-                </p>
+                <ul className="list-disc pl-5 space-y-2 text-slate-500 text-sm leading-relaxed">
+                  <li>Built an LLM pipeline that turns blood report images and PDFs into plain-language summaries with colour-coded verdicts in under 10 seconds.</li>
+                  <li>Wrote a five-report eval set before building, then raised the urgent-flag threshold after false alarms.</li>
+                  <li>Shipped in one day by limiting the MVP to one report format and cutting accounts and history to keep the no-storage promise.</li>
+                </ul>
               </div>
             </div>
 

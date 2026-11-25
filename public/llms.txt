@@ -1,33 +1,35 @@
-# Sunil Hanamshetty — Product Manager
+# Sunil Hanamshetty — Product Manager | Consumer Growth and Fintech
 
-> Experimentation-driven PM with 4+ years building B2C consumer products in EdTech, FinTech, and Health. 2× Founder. 1M+ users shipped.
+Two-time founder with an engineering base, based in Bengaluru. At Triveni, Sunil runs the full product loop on a live learning app. His earlier work includes Yelow's auto-loan journey and Flutter features for Isha Foundation's Miracle of Mind.
 
-## About
+## Experience
 
-Sunil Hanamshetty is an experimentation-driven Product Manager based in India with 4+ years of experience building B2C consumer products across EdTech, FinTech, and Health verticals. He is a 2× Founder and has shipped products used by over 1 million users.
+- Triveni, Founder & Product Lead (May 2025 to Present): Deprioritized AI Notes after SQL cohort and funnel analysis, then shifted to teacher-led quizzes. Mixpanel D1 retention was 15% in an earlier period and 28% in a later period. Built a teacher-led model with 32 active creators; 19 returned to create content at least 8 weeks after their first record. Reached 259 peak WAU. Early Rs 10/20 gated quizzes and later Rs 399/599 CET courses reached 22 paying customers and Rs 7,744 gross. Built an Agno PDF-to-notes-and-quizzes pipeline with an LLM-as-judge accuracy check.
+- Isha Foundation, Product Engineer (Product & UX) (Jun 2024 to Mar 2025): Owned Flutter audio listening, sharing, quote capture, and profiles for Miracle of Mind, which crossed 1M downloads in its first 24 hours. Built a remote feature switch to hide Sadhguru Wisdom if its third-party API failed under launch traffic.
+- Yelow, Software Engineer (Loan Origination Product) (Jan 2023 to Jun 2024): Sole frontend engineer for the auto-loan journey from OTP, PAN, Aadhaar and CKYC through income checks, calculator and disbursal. Built admin-triggered KYC failure recovery. Integrated 10+ bank and KYC partners, including OneMoney Account Aggregator and OCR checks, for a 500-user pilot. Shipped a demand-test landing page in seven days.
+- Mignon, Co-founder (Jan 2022 to Aug 2023; part-time from Jan 2023): Conducted 20+ salon-owner interviews to shape the MVP, shipped requested push notifications, and supported onboarded salons while exploring viability.
 
-His approach centres on using data and experimentation to make product decisions — not intuition alone. He focuses on activation, retention, and revenue metrics, and is comfortable working from 0-to-1 as well as scaling existing products.
+## Project
 
-## Case Studies
+- LabLens (Jun 2026): One-day hackathon build. Blood report images/PDFs become plain-language, colour-coded results in under 10 seconds. A five-report eval set exposed false urgent flags, so Sunil raised the threshold. MVP covered one report format, with no accounts or history to preserve the no-storage promise.
 
-- **Nanonets Onboarding Redesign** — Redesigned the onboarding flow for Nanonets (a B2B workflow automation SaaS) to communicate "structured data at scale" rather than "ChatGPT for docs". Reduced time-to-first-value to under 5 minutes. Lifted activation by 12 points.
-  URL: https://sunil-pm-portfolio.netlify.app/case-studies/nanonets-onboarding
+## Education and certification
 
-- **Plum Personal — ARPU & CLTV Growth Strategy** — Strategy to shift Plum from a yearly claims event to a weekly health habit for 6L+ insured employees, growing ARPU and CLTV. Projected ~12.6% base revenue lift.
-  URL: https://sunil-pm-portfolio.netlify.app/case-studies/plum-personal
-
-- **Cult.fit Growth Machine — Conversion Funnel MVP** — Built the intelligence layer to move Cult.fit from metric-watching to action-taking. Core signal: members who hit 3 workouts/week for 4 weeks are 3× more likely to stay. Applied across 1.5L member dataset.
-  URL: https://sunil-pm-portfolio.netlify.app/case-studies/cult-growth-machine
-
-## Projects
-
-- **LabLens — AI Blood Report Interpreter** — Solo hackathon build (1 day). LLM pipeline that converts blood report images/PDFs into plain-language summaries with colour-coded verdicts (Urgent / Monitor / Normal). Scored 81/100. Key design decision: tightened classification thresholds to prevent false Urgents — recall traded for trust, deliberately.
+- University of Horticultural Sciences, Bagalkot — B.Tech Food Technology, CGPA 7.9/10 (2016–2020).
+- Harvard CS50 online — Introduction to Computer Science (Sep 2021).
 
 ## Skills
 
-Product strategy, experimentation (A/B testing), activation & retention, growth analytics, user research, roadmapping, SQL, data analysis, B2C consumer products, B2B SaaS.
+Product: discovery interviews, funnel/cohort analysis, pricing tests, PRDs, LLM-as-judge evals. Data: SQL, Python, Mixpanel, Google Analytics. Build: JavaScript, Next.js, Flutter, Supabase, Agno, Postman, Figma.
+
+## Case studies
+
+The Nanonets, Plum, and Cult.fit pages are independent portfolio case studies. Their scenarios and projections are proposed work, not employment history or measured outcomes from the resume.
 
 ## Contact
 
 Email: hanamshettysunil6@gmail.com
+Phone: +91 9353129101
+LinkedIn: https://linkedin.com/in/sunilhanamshetty
 Portfolio: https://sunil-pm-portfolio.netlify.app
+Resume: https://sunil-pm-portfolio.netlify.app/resume.pdf

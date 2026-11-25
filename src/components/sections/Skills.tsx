@@ -4,18 +4,9 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const skillCategories = [
-  {
-    category: 'Product',
-    skills: ['Roadmap Definition', 'Funnel Analysis', 'Activation & Retention', 'North-Star Metrics', 'Monetization Experiments', 'PLG Loops', 'Time-to-First-Value', 'MVP & Iterative Shipping'],
-  },
-  {
-    category: 'Analytics & Experimentation',
-    skills: ['AARRR Framework', 'SQL-Based Analysis', 'A/B Testing', 'Metric-Driven Pivots', 'Pricing Experiments', 'Willingness-to-Pay', 'Mixpanel', 'Google Analytics'],
-  },
-  {
-    category: 'Technical',
-    skills: ['SQL', 'JavaScript', 'Python', 'Next.js', 'Postman', 'Supabase', 'Figma', 'Notion', 'ClickUp'],
-  },
+  { category: 'Product', skills: ['Discovery interviews', 'Funnel / cohort analysis', 'Pricing tests', 'PRDs', 'LLM-as-judge evals'] },
+  { category: 'Data', skills: ['SQL', 'Python', 'Mixpanel', 'Google Analytics'] },
+  { category: 'Build', skills: ['JavaScript', 'Next.js', 'Flutter', 'Supabase', 'Agno', 'Postman', 'Figma'] },
 ]
 
 export default function Skills() {

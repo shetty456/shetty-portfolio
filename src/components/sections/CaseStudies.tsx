@@ -51,7 +51,7 @@ export default function CaseStudies() {
                 {/* Metric */}
                 <div className="relative z-10">
                   <div className="text-4xl font-black text-white tracking-tight leading-none">~12.6%</div>
-                  <div className="text-pink-300 text-[11px] font-semibold mt-1.5 tracking-widest uppercase">Base revenue lift</div>
+                  <div className="text-pink-300 text-[11px] font-semibold mt-1.5 tracking-widest uppercase">Modeled revenue lift</div>
                 </div>
                 {/* Tags */}
                 <div className="relative z-10 flex flex-wrap gap-2">
@@ -74,7 +74,7 @@ export default function CaseStudies() {
                 <div className="flex-1" />
                 <div className="flex flex-wrap gap-4 text-sm pt-6 border-t border-slate-50 mt-6">
                   {[
-                    { label: 'Base revenue lift', value: '~12.6%' },
+                    { label: 'Modeled revenue lift', value: '~12.6%' },
                     { label: 'Lives covered', value: '6L+' },
                   ].map(stat => (
                     <div key={stat.label}>
@@ -112,7 +112,7 @@ export default function CaseStudies() {
                 {/* Metric */}
                 <div className="relative z-10">
                   <div className="text-4xl font-black text-white tracking-tight leading-none">3×</div>
-                  <div className="text-orange-300 text-[11px] font-semibold mt-1.5 tracking-widest uppercase">Retention uplift</div>
+                  <div className="text-orange-300 text-[11px] font-semibold mt-1.5 tracking-widest uppercase">Retention signal</div>
                 </div>
                 {/* Tags */}
                 <div className="relative z-10 flex flex-wrap gap-2">
@@ -130,12 +130,12 @@ export default function CaseStudies() {
                   <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover:text-blue-500 flex-shrink-0 mt-0.5 transition-colors" />
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  Built the intelligence layer to move Cult.fit from metric-watching to action-taking. Core signal: members who hit 3 workouts/week for 4 weeks are 3× more likely to stay.
+                  Proposed an intelligence layer to move Cult.fit from metric-watching to action-taking. Core signal: members who hit 3 workouts/week for 4 weeks are 3× more likely to stay.
                 </p>
                 <div className="flex-1" />
                 <div className="flex flex-wrap gap-4 text-sm pt-6 border-t border-slate-50 mt-6">
                   {[
-                    { label: 'retention uplift', value: '3×' },
+                    { label: 'retention signal', value: '3×' },
                     { label: 'members studied', value: '1.5L' },
                   ].map(stat => (
                     <div key={stat.label}>
@@ -199,13 +199,13 @@ export default function CaseStudies() {
                   <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover:text-blue-500 flex-shrink-0 mt-0.5 transition-colors" />
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  Nanonets was read as ChatGPT for docs — not a workflow automation tool. Redesigned onboarding to communicate structured data at scale and hit first value in under 5 minutes.
+                  Nanonets was read as ChatGPT for docs — not a workflow automation tool. Proposed an onboarding flow to communicate structured data at scale and target first value in under 5 minutes.
                 </p>
                 <div className="flex-1" />
                 <div className="flex gap-6 text-sm pt-6 border-t border-slate-50 mt-6">
                   {[
-                    { label: 'activation lift', value: '+12 pts' },
-                    { label: 'time-to-value', value: '<5 min' },
+                    { label: 'modeled lift', value: '+12 pts' },
+                    { label: 'target time-to-value', value: '<5 min' },
                   ].map(stat => (
                     <div key={stat.label}>
                       <span className="font-bold text-slate-900">{stat.value}</span>
