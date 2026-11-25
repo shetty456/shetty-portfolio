@@ -16,7 +16,7 @@ Growth loops are systems where output from one cycle becomes input to the next. 
 ### Viral Loops
 User action → Creates value for another person → That person joins
 
-Example: Yelow's creator referral program. Creator earns money → Invites peer creator → Peer joins and creates content → Platform grows.
+Example: a hypothetical creator referral loop. Creator shares a useful resource → A peer joins → The peer creates a resource → The platform grows.
 
 **Key metric**: Viral coefficient (K-factor). K > 1 = exponential growth.
 

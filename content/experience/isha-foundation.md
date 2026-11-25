@@ -2,29 +2,12 @@
 title: Product Engineer (Product & UX) — Isha Foundation
 company: Isha Foundation
 role: Product Engineer (Product & UX)
-type: Consumer / Non-profit
-date_range: 2024 — 2025
+date_range: Jun 2024 to Mar 2025
 ---
 
-# Isha Foundation
+# Isha Foundation — Product Engineer (Product & UX)
 
-**Role**: Product Engineer (Product & UX)
-**Duration**: 2024 — 2025
+**Duration:** June 2024 to March 2025
 
-## Context
-Isha Foundation is a global non-profit focused on human wellbeing through yoga and meditation. Sunil worked on their consumer mobile app and digital infrastructure.
-
-## Key Accomplishments
-
-### 1M+ User Launch
-- Built and shipped Flutter features for a consumer app that reached 1M+ downloads in less than 24 hours
-- Acted as bridge between product intent and engineering execution during high-risk launches
-
-### Reliability at Scale
-- Designed and implemented a backend traffic management system
-- Prevented cascading failures during the 1M+ user launch
-- Balanced system reliability with product experience goals
-
-### Product & UX Partnership
-- Partnered with Product and Design to deliver high-fidelity UX
-- Balanced speed, usability, and reliability under extreme scale conditions
+- Owned the Flutter build of audio listening, sharing, quote capture, and profiles for Miracle of Mind, which crossed 1 million downloads within 24 hours of launch.
+- Built a remote feature switch to hide Sadhguru Wisdom in the UI without an app update if its third-party API failed under launch traffic.
