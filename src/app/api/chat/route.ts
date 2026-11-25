@@ -17,6 +17,11 @@ Guidelines:
 Context about Sunil:
 {context}`
 
+const configuredModel = process.env.GROQ_MODEL
+const chatModel = !configuredModel || configuredModel === 'llama-3.3-70b-versatile'
+  ? 'openai/gpt-oss-20b'
+  : configuredModel
+
 export async function POST(req: NextRequest) {
   try {
     const { message, history = [] } = await req.json()
@@ -41,7 +46,7 @@ export async function POST(req: NextRequest) {
     ]
 
     const stream = await aiClient.chat.completions.create({
-      model: process.env.GROQ_MODEL ?? 'llama-3.3-70b-versatile',
+      model: chatModel,
       messages,
       stream: true,
     })
